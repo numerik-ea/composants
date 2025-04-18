@@ -1,8 +1,3 @@
-```bash
-# Lancer le site en local
-bundle exec jekyll serve --config _config.yml,_config_dev.yml --trace
-```
-
 ### Sauvegarder un composant
 - Sauvegarder la page web complète (avec les images, css, et js)
 - Modifier la page HTML et ne garder que le composant
