@@ -1,0 +1,376 @@
+/* 320 : IPHONE PORTRAIT */
+@media only screen and (max-width: 479px){
+	body{border-top:1px solid #66ff00;}
+	.wrapper {width:307px;}
+	.gpak {margin:0 0 30px -5px;}
+	.gp {
+		float:none;
+		width:307px;
+		margin-left:5px;
+	}
+
+	.site-search header .header-1 .logo{width:154px;}
+
+	/* RTE */
+	.rte .cta img{
+		width:90px;
+		height:90px;
+	}
+	.rte .column{
+		float:none;
+		width:100%;
+	}
+	/* REDIRECTION */
+	.redirection {
+		width: 304px;
+		height: 420px;
+		margin-left: -152px;
+		margin-top: -210px;
+	}
+	.redirection h1{
+		font-size:16px;
+		line-height:20px;
+	}
+	/* TOP MENU */
+	.top-menu a{font-size:12px;}
+	.a-selection span{
+		width:0px;
+		height:0px;
+		padding:0;
+		text-indent:-9999px;
+	}
+	/* BREADCRUMB */
+	.menu-account ul{width:265px;}
+	/* POPINS */
+	.popin-loading{
+		width:250px;
+		margin-left:-125px;
+	}
+	.popin > h1{
+		font-size:15px;
+		padding:0 10px;
+	}
+	.popin > h1 span{display:none;}
+	.popin button.close{right:10px;}
+	.pp-rte{
+		width:250px;
+		height:300px;
+		padding:10px;
+	}
+	.pp-create-alert,
+	.pp-send,
+	.pp-save-search,
+	.pp-manage-searches{width:270px;}
+	.pp-send .box-confirmation,
+	.pp-create-alert .box-confirmation{margin:10px 10px 0 10px;}
+	.pp-create-alert form,
+	.pp-send form{padding:10px;}
+	.pp-login{width:250px;}
+	.pp-login-required{width:250px;}
+	.pp-login-1,
+	.pp-login-2{padding:10px;}
+	.pp-form form input,
+	.pp-form form textarea,
+	.pp-form form select{
+		width:208px;
+		margin-bottom:10px;
+	}
+	.popin h2,
+	.pp-login-2 h2{
+		float:none;
+		margin:0 0 10px 0;
+	}
+	.pp-login-required-2 p{padding-left:0;}
+	.pp-save-search-1 input{
+		width:220px;
+		font-size:14px;
+	}
+	.pp-save-search-2 .alert .line input{width:198px;}
+	.pp-save-search-2 .alert .line select{width:218px;}
+	.pp-update-cv{width:230px;}
+	.pp-prefs{width:280px;}
+	.pp-prefs h2,
+	.pp-prefs form{padding:10px;}
+	.pp-prefs-offers input,
+	.pp-prefs-offers select,
+	.pp-prefs-agency select{
+		width: 218px;
+	}
+	.pp-prefs-offers select{width: 240px;}
+	.pp-prefs-agency .action{padding:10px 0 0 0;}
+	.pp-prefs .action button,
+	.pp-prefs .action a{
+		float:none;
+		display:inline-block;
+	}
+	.pp-prefs .action button{margin:0 0 10px 0;}
+	/* PAGINATION */
+	.pagination-1 a.previous,
+	.pagination-1 a.next{float:left;}
+	.pagination-1 a.previous{margin-right:25px;}
+	.pagination-1 .pages{
+		float:left;
+		width:220px;
+	}
+	.pagination-1 .pages a{
+		float:left;
+		margin-right:11px;
+		margin-bottom:10px;
+	}
+	.pagination-2{display:none;}
+	p.results{margin:0 0 15px 0}
+	/* TABS */
+	.slider-container .slider .item .t{
+		min-height:305px;
+		top:177px;
+	}
+	.slider-container .slider-control,
+	.slider-container .slider-pager{top:137px;}
+
+	/* OFFER SEARCH */
+	.agency-search input,
+	.offers-search input,
+	.search-engine form input{width:265px;}
+	.agency-search input,
+	.offers-search input.q2,
+	.search-engine form input.q2{width:265px;}
+
+	.search-engine form select,
+	.offers-search select,
+	.agency-search select{width:285px;}
+	.results-title form .n{display:none;}
+	/* SEARCH SEO */
+	.search-seo .a{margin:0;}
+	.search-seo ul{
+		float:none;
+		width:100%;
+		margin:0;
+	}
+	.search-seo ul:first-child{border:none;}
+	/* NO RESULT */
+	.no-result .c p{
+		float:none;
+		width:100%;
+		margin:0 0 10px 0;
+	}
+	/* APPLY */
+	.apply li a.a-apply-social{padding:0;}
+	.apply li a.a-apply-social span{display:none;}
+
+	/* CONFIRMATION */
+	.col-confirm-1{
+		float:none;
+		width:auto;
+		margin-bottom:20px;
+	}
+	.col-confirm-2{
+		float:none;
+		width:auto;
+	}
+
+	/* OFFERS */
+	.offer-title .social p span{display:none;}
+	.offer-resume h2{font-size:18px;}
+	.offer-resume li{font-size:13px;}
+	.offer-resume li strong{width:135px;}
+	.mosaic{margin:0;}
+	.mosaic .widget{
+		float:none;
+		width:auto;
+		height:auto;
+		margin:0 0 20px 0;
+	}
+	h3.title-related-offers{
+		font-size:16px;
+		line-height:18px;
+		padding:18px 10px 14px 53px;
+	}
+	.form-fill-cv input {width: 241px;}
+	.form-fill-cv input {width: 241px;}
+	.form-fill-cv select {width: 263px;}
+	.form-fill-cv .col-full textarea{width:242px;}
+	.candidate-cv .candidate-t h4,
+	.candidate-account .candidate-t h4{
+		width:168px;
+		height:42px;
+		padding-top:10px;
+		line-height:120%;
+	}
+	.sign-in-box span{line-height:30px;}
+	.sign-in-box a{
+		float:right;
+		background:#2175d9 url(img/chevron5.png) no-repeat center center;
+		width:30px;
+		height:30px;
+		text-indent:-9999px;
+		padding:0;
+		overflow:hidden;
+		zoom:1;
+	}
+	.candidate-t a{
+		display:block;
+		background-position:12px center;
+		width:30px;
+		height:30px;
+		text-indent:-9999px;
+		margin:12px 0 0 0;
+		padding:0;
+		overflow:hidden;
+		zoom:1;
+	}
+	.candidate-cv .cloud li,
+	.form-account-cv .cloud li{
+		float: none;
+		margin:15px  0 0 0;
+	}
+	.candidate-cv .cloud li:first-child{margin:0;}
+	/* SELECTION */
+	.h1-title {font-size:22px;}
+	/* AGENCIES */
+	.agencies-col-2{width:307px;}
+	.agencies-col-3{width:307px;}
+	.agency-sheet .info-1,
+	.agency-sheet .info-2{
+		float:none;
+		width:auto;
+	}
+	.agency-sheet .info-1{margin:0 0 20px 0;}
+	.agency-last-offers h3{
+		font-size:16px;
+		line-height:18px;
+		padding:18px 10px 14px 53px;
+	}
+
+	/* CANDIDATE */
+	.apply-title-confirm h1,
+	.candidate-title{line-height:24px;}
+	.form-retrieve-password input{
+		float:none;
+		margin:0 0 20px 0;
+		width:263px;
+	}
+	.home-candidate .form-login input{width:264px;}
+	.home-candidate .form-login .radio,
+	.home-candidate .form-login .action,
+	.home-candidate .form-login small.error{padding-left:0px;}
+	.home-candidate .access{background-image:none;}
+	.home-candidate .access .bt-orange2{font-size:19px;}
+	.home-candidate .access p{padding-right:0;}
+	.create-account-title h1{line-height:24px;}
+
+	/* CONTENT */
+	.col-content-1,
+	.col-content-2,
+	.col-content-3,
+	.col-content-4,
+	.col-content-5{
+		float:none;
+		width:auto;
+	}
+	.header-article .t h1{
+		float:none;
+		width:100%;
+	}
+	.header-article .tools-article p{float:none;}
+	.header-article .a-send{float:left;}
+	.header-article .t .pn{display:none;}
+	.blog-list .item .v,
+	.blog-list .item.push .v{
+		float:none;
+		display:block;
+		width:auto;
+		margin:0 0 20px 0;
+	}
+
+
+	/* HOMEPAGE */
+	.widget-agency-home .v img{/*margin-left:-81px;*/}
+	.widget-last-offers .t h3{float:none;}
+	.widget-last-offers .t select{
+		float:none;
+		width:100%;
+	}
+	.homepage .widget-last-offers li h2,
+	.homepage .widget-last-offers li p{
+		float:none;
+		width:auto;
+	}
+	.homepage .widget-last-offers li p{font-size:12px;margin-bottom:5px;}
+	.entry-list .item img{
+		float:none;
+		margin:0 0 20px 0;
+	}
+
+	.widget-360-full .push .v{
+		float:none;
+		width:auto;
+		margin:0 0 20px 0;
+	}
+        .cooptation-form .frm_style_style-formidable.with_frm_style .frm_form_fields > fieldset {
+            width: auto !important;
+        }
+        .mobile-covid{          
+            display:block !important;
+            position: relative;
+            background: #f5f5f5;            
+            z-index: 2;
+            margin: 0 auto;             
+        }
+        .barometre-content .wrapper{
+            width: 100% !important;    
+        }
+        .barometre-content .col {            
+            width: 100% !important;
+        }
+        .barometre-content .col-2 {
+            padding-top:10px;
+            padding-left: 15px !important;
+            width: auto !important;
+        }
+        .barometre-intro .col-1 {
+            width: 100% !important;              
+            padding-right: 0px !important;
+        }
+        .barometre-intro .col-2 {            
+            width: 100% !important;
+            margin-top: 50px;
+        }
+        #frm_form_4_container{
+            margin-left: 0px !important
+        }
+        .barometre-form fieldset {
+            float: left;
+            width: 100% !important;
+        }
+        .cooptation-header h1 {
+            color: #2175D9;
+            font-size: 28px;
+            font-weight: bold;
+            line-height: 1.2;
+            padding-top: 30px;
+            margin-bottom: 20px;
+          }
+          .cooptation-header h2 {
+            color: #2175D9;
+            font-size: 26px;
+            font-weight: normal;
+            line-height: 1.2;
+            margin-bottom: 20px;
+          }
+          .cooptation-how .item {
+            position: relative;
+            float: left;
+            width: 100%;
+          }
+          .parrainage-conditions .item {
+            position: relative;
+            float: left;
+            width: 100%;
+          }
+          .cooptation-form {
+            background: #0f1941;
+            padding: 65px 0;
+            margin-bottom: -20px;
+            height: auto;
+          }
+}

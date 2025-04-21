@@ -1,0 +1,456 @@
+/* 768 : IPAD PORTRAIT */
+@media only screen and (max-width: 1023px){
+	body{border-top:1px solid #0066ff;}
+	.wrapper {width:748px;}
+	.gpak {margin:0 0 30px -20px;}
+	.gp {margin-left:20px;}
+	.gp-1 {width:44px;}
+	.gp-2 {width:108px;}
+	.gp-3 {width:172px;}
+	.gp-4 {width:236px;}
+	.gp-4half {width:339px;}
+	.gp-5 {width:300px;}
+	.gp-6 {width:364px;}
+	.gp-7 {width:428px;}
+	.gp-8 {width:492px;}
+	.gp-9 {width:556px;}
+	.gp-10 {width:620px;}
+	.gp-11 {width:684px;}
+	.gp-12 {width:748px;}
+	/* NAV */
+	.nav-detail-bt .pn a span{
+		display:block;
+		width:6px;
+		text-indent:-9999px;
+	}
+	.nav-detail-bt .pn .previous,
+	.nav-detail-bt .pn .next{
+		padding:0 12px;
+	}
+	.nav-detail-bt .pn .previous span,
+	.nav-detail-bt .pn .next span{padding:0;}
+	/* HEADER */
+	.site-search header .header-1 .logo{width:250px;}
+	.main-menu .logo{padding:22px 0 29px 0;}
+	.main-menu .nav .menu-item > a{
+		font-size:16px;
+		padding:0 20px;
+	}
+	.a-mobile-smenu{display:block;}
+	.subnav-left ul{
+		display:none;
+		padding:0 20px;
+		border:1px solid #bcd5f4;
+		border-top:none;
+	}
+	.subnav-left li:last-child{border:none;}
+	.subnav-left li a.active{
+		background:url(img/chevron6.png) no-repeat right 9px;
+		color:#2175d8;
+	}
+	.menu-site li{margin-left:35px;}
+	.menu-account .a-selection{padding-left:22px;}
+	.menu-account .a-selection em{display:none;}
+	/* POPIN */
+	.pp-login-required{
+		width:720px;
+		background-position:365px top;
+	}
+	.pp-login-required-1{
+		float:left;
+		width:290px;
+		padding:25px 0 45px 25px;
+	}
+	.pp-form form input,
+	.pp-form form textarea,
+	.pp-form form select{width:288px;}
+	.pp-login-required-2{width:285px;}
+	.pp-login-required-2 ul{background:none;}
+	.pp-login-required-2 li{
+		font-size:12px;
+		padding:5px 0 5px 35px;
+	}
+	.pp-login-required-2 li.d1{background:url(img/picto-benefit1.png) no-repeat left 5px;}
+	.pp-login-required-2 li.d2{background:url(img/picto-benefit2.png) no-repeat left 6px;}
+	.pp-login-required-2 li.d3{background:url(img/picto-benefit3.png) no-repeat left 5px;}
+	.pp-login-required-2 li.d4{background:url(img/picto-benefit4.png) no-repeat left 5px;}
+	.pp-login-required-2 p{
+		display:inline-block;
+		font-size:13px;
+		color:#2175d9;
+		padding:5px 0 5px 15px;
+	}
+
+	/* WIDGETS */
+	.sidebar .mosaic .widget-why-randstad,
+	.sidebar .mosaic .widget-agency{min-height:260px !important;}
+	.sidebar{
+		clear:both;
+		float:none;
+		width:auto;
+	}
+	.widget-offer-agency{margin:0 0 30px 0;}
+	.widget-offer-agency .c{
+		float:left;
+		width:295px;
+		padding-bottom:10px;
+	}
+	.widget-offer-agency .gmap-simple{
+		float:right;
+		width:362px;
+		height:225px;
+		border-top:none;
+		border-left:1px solid #e0e0e0;
+	}
+	.widget-offer-agency .a{
+		width:295px;
+		border-top:none;
+	}
+	.widget-facebook .t{padding-left:20px;}
+	.widget-facebook .c{padding:0 0 0 10px;}
+	.homepage .widget-facebook.cloned{width:362px;}
+	.mosaic{
+		margin:0 0 0 -20px;
+		overflow:hidden;
+		zoom:1;
+	}
+	.mosaic .widget{
+		float:left;
+		width:322px;
+		margin:0 0 20px 20px;
+	}
+	.mosaic .widget-img-txt,
+	.mosaic .widget-facebook{width:362px;}
+	.mosaic .widget-img{
+		width:364px;
+		height:auto;
+	}
+	.widget-agency .v{display:none;}
+	.widget-agency select,
+	.widget-agency input{
+		float:left;
+		width:206px;
+		margin-right:10px;
+		margin-bottom:0;
+	}
+	.mosaic .widget-agency .v{display:block;}
+	.mosaic .widget-agency select,
+	.mosaic .widget-agency input{
+		float:none;
+		width:290px;
+		margin-right:0;
+		margin-bottom:10px;
+	}
+	.mosaic .widget-agency select{width:310px;}
+	.mosaic	.widget-news{width:342px;}
+
+	/* HOMEPAGE */
+	.col-homepage-1{
+		float:none;
+		width:auto;
+	}
+	.col-homepage-4{
+		clear:both;
+		float:none!important;
+		width:auto!important;
+	}
+	.homepage .widget-last-offers li h2{width:390px;}
+
+
+	/* TABS */
+	.slider-container .slider .item img{display:block;}
+	/* SEARCH ENGINE */
+
+	.home-search-engine img{display:none;}
+	.search-engine{width:auto;}
+	.search-engine-1{min-height:0;}
+	.search-engine h1{font-size:22px;}
+	.search-engine form input{width:272px;}
+	.search-engine form input.q2{width:225px;}
+	.search-engine form select{width:242px;}
+	.search-engine .select-js-container{width:270px;}
+
+	/* OFFERS SEARCH */
+	.agency-search,
+	.offers-search{margin:0 0 20px 0;}
+	.agency-search select,
+	.agency-search input,
+	.offers-search input{
+		float:left;
+		width:242px;
+		margin:0 10px 0 0;
+	}
+	.agency-search select,
+	.offers-search select{width:264px;}
+
+	.offers-search .select-js-container{
+		float:left;
+		width:274px;
+	}
+	/* NO RESULT */
+	.no-result .c p{width:63%;}
+	/* OFFERS */
+	.a-save-search:first-of-type{display:none;}
+	.a-save-search{	margin-top:20px;}
+	.bt-saved-searches{margin-bottom:-17px;}
+
+	.offers-col-search{width:236px;}
+	.offers-col-results{width:492px;}
+	.apply-page .col-apply-1,
+	.col-confirm-1{
+		float:none;
+		width:auto;
+		margin-bottom:20px;
+	}
+	.apply-page .col-apply-2,
+	.col-confirm-2{
+		float:none;
+		width:auto;
+	}
+	.form-fill-cv .row .col {width: 302px;}
+	.form-fill-cv .row .col-full{width:auto;}
+	.form-fill-cv input {width: 280px;}
+	.form-fill-cv select {width: 302px;}
+	.form-fill-cv .col-full textarea,
+	.gp-8 .form-fill-cv .col-full textarea{width:622px;}
+
+	/* OFFER SEARCH */
+	.offers-col-search,
+	.offers-col-results{
+		float:none;
+		width:auto;
+		margin-bottom:20px;
+	}
+	.title-search{
+		cursor:pointer;
+		font-size:18px;
+		background:url(img/arrow-offers-search.png) no-repeat scroll right center;
+		margin:0;
+	}
+	.title-search-active{background:url(img/arrow-offers-search2.png) no-repeat scroll right center;}
+	.active-filters{padding:20px 0;}
+	.active-filters ul{
+		float:left;
+		width:64%;
+		padding:7px 0 0 0;
+		margin:0;
+	}
+	.active-filters .a-clear-filters{
+		float:right;
+		width:216px;
+		margin:0;
+	}
+	.filters{padding:17px 20px;}
+	.a-mobile-filter-search{display:block;}
+	/* OFFER SHEET */
+	.col-offer-sheet-1,
+	.col-offer-sheet-2{width:748px;}
+	.col-offer-sheet-2{padding-top:20px;}
+	/* AGENCIES */
+	.agencies-col-1{display:none;}
+	.agencies-col-2{width:748px;}
+	.agencies-col-3{width:492px;}
+	.agencies-col-4{width:236px;}
+	.agencies-col-5{display:none;}
+	.frm-itinary{padding:19px;}
+	.frm-itinary-1{margin:0 30px 0 0;}
+	.frm-itinary-2{margin:0 30px 0 0;}
+	.agency-sheet .title h1{width:80%;}
+	.agency-sheet .title .a-define-agency{
+		width:28px;
+		border:none;
+		text-indent:-9999px;
+		padding:0;
+		margin:0;
+	}
+	.agency-sheet .title .a-print{display:none;}
+	.agency-labels li{width:40px;}
+	/* ACCOUNT */
+	.account-menu li a{padding:0 12px;}
+
+	.blog-header .wrapper{background-position:right bottom;}
+
+	/* FOOTER */
+	.footer{padding:38px 0 0 0;}
+	.footer-1{
+		float:right;
+		width:217px;
+		padding-bottom:38px;
+	}
+	.footer-1 p{display:none;}
+	.footer-1 .c{margin:0;}
+	.footer-1 h3{
+		font-size:14px;
+		font-weight:normal;
+		margin:15px 0 10px 0;
+	}
+	.footer .footer-1 .col{display:none;}
+	.footer .footer-1 .col-5{
+		display:block;
+		width:100%;
+	}
+	.footer .footer-1 .col-5 h3,
+	.footer .footer-1 .col-5 .acces-recruteur,
+	.footer .footer-1 .col-5 .labels{display:none;}
+	.footer .footer-1 .col-5 ul{
+		float:left;
+		padding-left:20px;
+	}
+	.footer .footer-1 .col-5 li{width:32px;}
+	.footer .footer-1 .charte-diversite{
+		float:right;
+		width:39px;
+		padding:0;
+	}
+
+	.footer .footer-2 {
+		float:left;
+		width:510px;
+		border:0;
+		padding:7px 0 0 0;
+	}
+
+	/* OFFERS LIST */
+	.offers-col-results .offers-list,
+	.related-offers .offers-list,
+	.col-account-1 .offers-list{margin-left:-20px;}
+	.offers-col-results .offers-list li,
+	.related-offers li,
+	.col-account-1 .offers-list li{
+		width:364px;
+		margin-left:20px;
+	}
+	.offers-col-results .offers-list .c,
+	.related-offers .offers-list .c,
+	.col-account-1 .offers-list .c{min-height:215px;}
+	.col-selection-1 .offers-list{margin:0;}
+	.col-selection-1 .offers-list li{
+		float:none;
+		width:100%;
+		margin:0 0 20px 0;
+	}
+	.col-selection-1 .offers-list .c{min-height:100%;}
+	.offers-list .a .a-add-to-selection,
+	.offers-list-inline .a .a-add-to-selection{margin-left:15px;}
+	.offers-list-inline .a p{
+		clear:both;
+		float:none;
+		line-height:normal;
+		padding-left:0;
+		padding-top:20px;
+	}
+
+
+	/* ERROR 404 */
+	.col-404-1{display:none;}
+	.col-404-2{width:100%;}
+	.error-404 .c{padding:0;}
+
+	/* CONTENT */
+	.col-content-1,
+	.col-content-5,
+	.col-contact-2{
+		float:none;
+		width:auto;
+	}
+	.col-blog-1,
+	.col-contact-1{
+		float: none;
+		width: auto;
+		margin-bottom: 40px;
+	}
+	.col-content-2{width:492px;}
+	.col-blog-2{padding-top:0;}
+
+	/* HOMEPAGE */
+	.homepage .gpak{margin-bottom:30px;}
+	.homepage .col-homepage-2 .widget:first-child{margin-bottom:0;}
+	.col-homepage-1 .gp-4,
+	.col-homepage-3 .gp-4{width:364px;}
+	.col-homepage-2{
+		float:none;
+		width:auto;
+		margin-left:0;
+	}
+	.col-homepage-2 .widget{
+		float:left;
+		width:322px;
+		margin:0 0 0 20px;
+	}
+	.col-homepage-2 .widget-news{width:342px;}
+	.widget-agency-home .v{width:auto;}
+	.widget-agency-home .v img{/*margin-left:-63px;*/}
+	.widget-img-txt .v{float:none;}
+	.widget-poll{min-height:0;}
+	.col-homepage-clients-1,
+	.col-homepage-clients-2{width:364px;}
+	.col-homepage-clients-3{width:748px;}
+	.homepage .widget-need{
+		min-height:0;
+		margin-top:30px;
+	}
+	.homepage .widget-360-full{min-height:0;}
+
+	/* FAQ */
+	.col-faq-1,
+	.col-faq-2,
+	.col-faq-3,
+	.col-content-1,
+	.col-content-2,
+	.col-content-4,
+	.col-content-5{
+		float:none;
+		width:auto;
+	}
+	.col-faq-4{display:none;}
+	.col-faq-1 .gp-4{width:364px;}
+	.widget-contact{padding:30px 0 0 0;}
+	.entry-list .t img{width:258px;}
+
+	/* COL TOP */
+	.col-top-1,
+	.col-top-4{
+		float:none;
+		width:auto;
+	}
+	.col-top-2,
+	.col-top-3{width:364px;}
+	.col-top-1 .widget-need{display:none;}
+	.popin-cnil .close{
+		width:18px;
+		height:18px;
+		text-indent:-9999px;
+		overflow:hidden;
+		zoom:1;
+	}
+
+	/* liste offres */
+	#offers-container { display: table; width: 100%; }
+	#offer-block-1 { display: table-footer-group; }
+	#offer-block-2 { display: table-header-group; }
+        .rte .column4 {
+            float: left;
+            width: 41%;
+        }
+        .cooptation-form .frm_style_style-formidable.with_frm_style .frm_form_fields > fieldset {
+            width: auto !important;
+        }
+        .mobile-covid{          
+            display:block !important;
+            position: relative;
+            background: #f5f5f5;            
+            z-index: 2;
+            margin: 0 auto;             
+        }
+        #frm_form_4_container { 
+            max-width: 100% !important;
+            margin-left: 20px !important;
+        }
+        .barometre-content .col {                        
+            width: 100%;
+        }
+        .barometre-content .col-2 {                        
+           margin-left: 140px !important;
+        }        
+        
+}

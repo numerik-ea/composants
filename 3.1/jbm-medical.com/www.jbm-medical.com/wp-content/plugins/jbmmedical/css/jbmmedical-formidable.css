@@ -1,0 +1,518 @@
+/*
+    Document   : randstad-formidable
+    Created on : 10 mars 2014, 15:59:52
+    Author     : SI043332
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.frm_message,.frm_error_style,.frm_success_style {border-radius:0px !important;}
+.frm_forms form {margin-top:10px;text-align: left;}
+
+.frm_forms label.frm_primary_label, .frm_forms.frm_login_form label {
+    color: #444444;
+    display: block;
+    font-family: Tahoma,​Arial,​Helvetica,​sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    width: auto;
+}
+.frm_forms .form-field {
+    margin-bottom: 10px;
+}
+.frm_forms .form-field.frm_col_field {
+    clear: none;
+    float: left;
+    margin-right: 20px;
+}
+.frm_forms p.description, .frm_forms div.description, .frm_forms div.frm_description, .frm_forms .frm_error {
+    color: #666666;
+    font-family: Tahoma,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0;
+    max-width: 100%;
+    padding: 0;
+    text-align: left;
+}
+.frm_forms .frm_left_container p.description, .frm_forms .frm_left_container div.description, .frm_forms .frm_left_container div.frm_description, .frm_forms .frm_left_container .frm_error {
+    margin-left: 165px;
+}
+.frm_forms .form-field.frm_col_field div.frm_description {
+    max-width: 265px;
+    min-width: 241px;
+    width: auto;
+}
+.frm_forms .frm_left_container .attachment-thumbnail {
+    clear: both;
+    margin-left: 165px;
+}
+.frm_forms .frm_right_container p.description, .frm_forms .frm_right_container div.description, .frm_forms .frm_right_container div.frm_description, .frm_forms .frm_right_container .frm_error {
+    margin-right: 165px;
+}
+.frm_forms label.frm_primary_label {
+    max-width: 100%;
+}
+.frm_forms .frm_top_container label.frm_primary_label, .frm_forms .frm_hidden_container label.frm_primary_label, .frm_forms .frm_pos_top {
+    display: block;
+    float: none;
+    width: auto;
+}
+.frm_forms .frm_inline_container label.frm_primary_label, .frm_forms .frm_inline_container .frm_opt_container {
+    display: inline;
+    margin-right: 10px;
+}
+.frm_forms .frm_left_container label.frm_primary_label {
+    display: inline;
+    float: left;
+    margin-right: 10px;
+    width: 150px;
+}
+.frm_forms .frm_right_container label.frm_primary_label, .frm_forms .frm_pos_right {
+    display: inline;
+    float: right;
+    margin-left: 10px;
+    width: 150px;
+}
+.frm_forms .frm_none_container label.frm_primary_label, .frm_forms .frm_pos_none {
+    display: none;
+}
+.frm_forms .frm_hidden_container label.frm_primary_label, .frm_forms .frm_pos_hidden {
+    visibility: hidden;
+}
+.frm_forms .frm_scale {
+    float: left;
+    margin-right: 10px;
+    text-align: center;
+}
+.frm_forms .frm_scale input {
+    display: block;
+    margin-bottom: 5px;
+}
+.frm_forms .frm_scale label {
+    font-weight: normal;
+}
+.frm_forms .frm_required {
+    top:-0.25em;
+    color: #2175d9;
+    font-weight: normal;
+    font-size: 75%;
+}
+.frm_forms input[type="text"], .frm_forms input[type="password"], .frm_forms input[type="email"], .frm_forms input[type="number"], .frm_forms input[type="url"], .frm_forms input[type="tel"], .frm_forms select, .frm_forms textarea, #content .frm_forms input:not([type="submit"]), #content .frm_forms select, #content .frm_forms textarea, .frm_forms .chzn-container {
+    font-family: Tahoma,​Arial,​Helvetica,​sans-serif;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+.frm_forms input[type="text"], .frm_forms input[type="password"], .frm_forms input[type="email"], .frm_forms input[type="number"], .frm_forms input[type="url"], .frm_forms input[type="tel"], .frm_forms select, .frm_forms textarea, .frm_form_fields_style, .frm_forms .frm_scroll_box .frm_opt_container, .frm_form_fields_active_style, .frm_form_fields_error_style, .frm_forms .chzn-container-multi .chzn-choices, .frm_forms .chzn-container-single .chzn-single {
+    background-color: #FFFFFF !important;;
+    border-color: #DDDDDD !important;;
+    border-radius: 0 !important;;
+    border-style: solid !important;;
+    border-width: 1px !important;;
+    color: #444444 !important;;
+    font-size: 14px !important;;
+    max-width: 100% !important;;
+    padding: 0 10px !important;;
+    width: 287px !important;
+}
+.frm_forms input[type="text"], .frm_forms input[type="password"], .frm_forms input[type="email"], .frm_forms input[type="number"], .frm_forms input[type="url"], .frm_forms input[type="tel"], .frm_forms input[type="file"], .frm_forms select {
+    height: 25px;
+    line-height: 25px;
+}
+.frm_forms select[multiple="multiple"] {
+    height: auto;
+    line-height: normal;
+}
+.frm_forms input[type="file"] {
+    border: medium none;
+    color: #444444;
+    padding: 0;
+}
+.frm_forms .frm_default, .frm_forms .placeholder, .frm_forms .chzn-container-multi .chzn-choices .search-field .default, .frm_forms .chzn-container-single .chzn-default {
+    color: #444444;
+    font-style: italic;
+}
+.frm_forms select {
+    max-width: 100% !important;
+    padding: 4px !important;
+    width: 287px !important;    
+}
+.frm_forms .listmetiers {
+    height:130px !important;
+}
+
+.frm_forms input[type="radio"], .frm_forms input[type="checkbox"] {
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border: medium none;
+    padding: 0;
+    width: auto;
+}
+.frm_forms .frm_catlevel_2, .frm_forms .frm_catlevel_3, .frm_forms .frm_catlevel_4, .frm_forms .frm_catlevel_5 {
+    margin-left: 18px;
+}
+.frm_forms .wp-editor-wrap {
+    max-width: 100%;
+    width: 265px;
+}
+.frm_forms .quicktags-toolbar input {
+    font-size: 12px !important;
+}
+.frm_forms .wp-editor-container textarea {
+    border: medium none;
+}
+.frm_forms .mceIframeContainer {
+    background-color: #F7F7F7;
+}
+.frm_forms .nicEdit-selectTxt {
+    line-height: 14px;
+}
+.frm_forms .nicEdit-panelContain {
+    border-color: #DDDDDD !important;
+}
+.frm_forms .nicEdit-main {
+    background-color: #F7F7F7;
+    border-color: #DDDDDD !important;
+    border-style: none solid solid;
+    border-width: medium 1px 1px;
+    color: #444444;
+    margin: 0 !important;
+    outline: medium none;
+    padding: 4px;
+    width: auto !important;
+}
+.frm_forms input.auto_width, .frm_forms select.auto_width, .frm_forms textarea.auto_width {
+    width: 265px;
+}
+.frm_forms input[disabled], .frm_forms select[disabled], .frm_forms textarea[disabled], .frm_forms input[readonly], .frm_forms select[readonly], .frm_forms textarea[readonly] {
+    opacity: 0.5;
+}
+.frm_set_select .frm_forms select, .frm_set_select .frm_forms select.auto_width {
+    width: 100%;
+}
+.frm_forms .form-field input:focus, .frm_forms select:focus, .frm_forms textarea:focus, .frm_forms .frm_focus_field input[type="text"], .frm_forms .frm_focus_field input[type="password"], .frm_forms .frm_focus_field input[type="email"], .frm_forms .frm_focus_field input[type="number"], .frm_forms .frm_focus_field input[type="url"], .frm_forms .frm_focus_field input[type="tel"], .frm_form_fields_active_style, .frm_forms .chzn-container-active .chzn-choices {
+    background-color: #FFFFFF;
+    border-color: #DDDDDD;
+}
+.frm_forms .frm_submit input[type="submit"], .frm_forms .frm_submit input[type="button"], .frm_form_submit_style, .frm_forms.frm_login_form input[type="submit"] {
+    background-color: #4D92E1;
+    border-color: #4D92E1;
+    border-radius: 0;
+    border-style: solid;
+    border-width: 0;
+    box-shadow: 1px 2px 3px #FFFFFF;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Tahoma,​Arial,​Helvetica,​sans-serif;
+    font-size: 14px !important;
+    font-weight: normal;
+    height: 30px;
+    text-align: center;
+    text-shadow: none;
+    width: 100px;
+}
+.frm_forms p.submit, .frm_forms.frm_login_form p.login-submit {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+.frm_forms .frm_submit input[type="submit"]:focus, .frm_forms .frm_submit input[type="button"]:focus, .frm_forms.frm_login_form input[type="submit"]:focus {
+    background-color: #4D92E1;
+}
+.frm_ajax_loading {
+    visibility: hidden;
+}
+.frm_form_submit_style {
+    height: auto;
+}
+a.frm_save_draft {
+    cursor: pointer;
+}
+.frm_forms .frm_radio {
+    display: inline;
+}
+.frm_forms .frm_left_container .frm_radio {
+    margin: 0;
+}
+.frm_forms .frm_right_container .frm_radio {
+    margin: 0;
+}
+.frm_forms .horizontal_radio .frm_radio {
+    margin: 0 5px 0 0;
+}
+.frm_forms .frm_checkbox {
+    display: block;
+}
+.frm_forms .frm_left_container .frm_checkbox {
+    margin-left: 165px;
+}
+.frm_forms .frm_right_container .frm_checkbox {
+    margin-right: 165px;
+}
+.frm_forms .horizontal_radio .frm_checkbox {
+    margin: 0 5px 0 0;
+}
+.frm_forms .vertical_radio .frm_checkbox, .frm_forms .vertical_radio .frm_radio, .vertical_radio .frm_catlevel_1 {
+    display: block;
+}
+.frm_forms .horizontal_radio .frm_checkbox, .frm_forms .horizontal_radio .frm_radio, .horizontal_radio .frm_catlevel_1 {
+    display: inline-block;
+}
+.frm_forms .frm_radio label, .frm_forms .frm_checkbox label {
+    color: #444444;
+    display: inline;
+    font-family: Tahoma,Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+}
+.frm_forms .frm_radio label .frm_file_container, .frm_forms .frm_checkbox label .frm_file_container {
+    display: inline-block;
+    margin: 5px;
+    vertical-align: middle;
+}
+.frm_forms .frm_radio input[type="radio"] {
+}
+.frm_forms .frm_checkbox input[type="checkbox"] {
+}
+.frm_forms .frm_radio input[type="radio"], .frm_forms .frm_checkbox input[type="checkbox"] {
+    display: inline;
+    height: auto;
+    margin-right: 5px;
+    width: auto;
+}
+.frm_forms input[type="radio"], .frm_forms input[type="checkbox"] {
+    width: auto;
+}
+.frm_forms .frm_blank_field input[type="text"], .frm_forms .frm_blank_field input[type="password"], .frm_forms .frm_blank_field input[type="url"], .frm_forms .frm_blank_field input[type="tel"], .frm_forms .frm_blank_field input[type="number"], .frm_forms .frm_blank_field input[type="email"], .frm_forms .frm_blank_field textarea, .frm_forms .frm_blank_field select, .frm_form_fields_error_style, .frm_forms .frm_blank_field #recaptcha_area, .frm_forms .frm_blank_field .chzn-container-multi .chzn-choices {
+    background-color: #F7F7F7;
+    border-color: #E41F1F;
+    border-style: solid;
+    border-width: 1px;
+    color: #444444;
+}
+.frm_forms *:invalid, .frm_forms *:-moz-submit-invalid, .frm_forms *:-moz-ui-invalid {
+    box-shadow: none;
+}
+.frm_forms .frm_error {
+    font-weight: normal;
+    color: #E41F1F;
+}
+.frm_forms .frm_error_style {
+    background-color: #FFF8F8;
+    border: 1px solid #FFC9C9;
+    color: #E41F1F;
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+.frm_forms .frm_error_style img {
+    border: medium none;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+.frm_forms .frm_trigger {
+    cursor: pointer;
+}
+.frm_forms .frm_message, .frm_success_style {
+    background-color: #F7FBD1;
+    border: 1px solid #B8D000;
+    color: #000000;
+}
+.frm_forms .frm_error_style, .frm_forms .frm_message, .frm_success_style {
+    border-radius: 4px;
+    padding: 15px;
+}
+.frm_forms .frm_message {
+    font-size: 14px;
+    margin: 5px 0 15px;
+}
+.frm_forms .frm_message p {
+    margin-bottom: 5px;
+    padding:0;
+}
+.frm_form_fields_style, .frm_form_fields_active_style, .frm_form_fields_error_style, .frm_form_submit_style {
+    width: auto;
+}
+.frm_forms .frm_trigger span {
+    float: left;
+}
+.frm_forms table.frm-grid, #content .frm_forms table.frm-grid {
+    border: medium none;
+    border-collapse: collapse;
+}
+.frm_forms .frm-grid td, .frm-grid th {
+    border-color: -moz-use-text-color -moz-use-text-color #DDDDDD;
+    border-style: none none solid;
+    border-width: medium medium 1px;
+    padding: 5px;
+}
+
+.form_results.frm_forms {
+}
+.form_results.frm_forms tr td {
+    border-top: 1px solid #DDDDDD;
+    color: #444444;
+    padding: 7px 9px;
+    text-align: left;
+}
+.form_results.frm_forms tr.frm_even, .frm-grid .frm_even {
+    background-color: #F7F7F7;
+}
+.form_results.frm_forms tr.frm_odd, .frm-grid .frm_odd {
+    background-color: #FFFFFF;
+}
+.frm_forms .frm_uploaded_files {
+    padding: 5px 0;
+}
+.frm_forms .frm_file_names {
+    display: block;
+}
+
+.frm_forms label{font-size:12px;float:none;text-align:left;margin:0;padding:0;width:auto;}
+.frm_forms label.frm_primary_label{display:block;}
+.frm_forms .frm_top_container label.frm_primary_label{display:block;float:none;width:auto;}
+.frm_forms .frm_left_container label.frm_primary_label{float:left;padding-right:10px;width:150px;}
+.frm_forms .frm_right_container label.frm_primary_label{float:right;padding-left:10px;width:150px;}
+.frm_forms .frm_none_container label.frm_primary_label{display:none;}
+.frm_forms .frm_hidden_container label.frm_primary_label{visibility:hidden;}
+.frm_forms .frm_inline_container label.frm_primary_label, .frm_forms .frm_inline_container .frm_opt_container {display:inline;padding-right:10px;}
+.frm_forms .horizontal_radio .frm_checkbox, .frm_forms .horizontal_radio .frm_radio {margin-right:5px;}
+.frm_forms .form-field, .frm_forms .frm_form_field{margin-bottom:15px;}
+.frm_forms .frm_blank_field input, .frm_forms .frm_blank_field textarea, .frm_forms .frm_blank_field select, .frm_forms .frm_blank_field #recaptcha_area{border:1px solid #be2e17;}
+.frm_forms .frm_checkbox, .frm_forms .frm_radio{display:block;margin:0;}
+.frm_forms .frm_left_container .frm_checkbox, .frm_forms .frm_left_container .frm_radio{margin-left:160px;}
+.frm_forms fieldset{border:none;margin:0;padding:0;}
+.frm_forms p.frm_submit{padding-top:20px;padding-bottom:20px;}
+.frm_forms p.description, .frm_forms div.description, .frm_forms .frm_description, .frm_forms .frm_error{margin:0;padding:0;font-size:14px;font-weight:normal;text-align:left;font-style:normal;clear:both;}
+.frm_forms .frm_left_container .description, .frm_forms .frm_left_container .frm_error, .frm_forms .frm_left_container .frm_description{margin-left:160px;}
+.frm_forms .frm_form_fields input.auto_width, .frm_forms .frm_form_fields select.auto_width, .frm_forms .frm_form_fields textarea.auto_width{width: 265px;}
+.frm_set_select .frm_forms .frm_form_fields select, .frm_set_select .frm_forms .frm_form_fields select.auto_width{width:95%;}
+.frm_forms .frm_radio label, .frm_forms .frm_checkbox label{display:inline;}
+.frm_forms input[type="radio"], .frm_forms input[type="checkbox"]{width:auto;margin-right:3px;}
+.frm_forms .frm_message p{margin-bottom:5px;}
+.frm_forms .frm_default, .frm_forms .placeholder{font-style:italic;}
+.frm_ajax_loading{visibility:hidden;}
+
+.frm_forms.frm_forms{max-width:98%;}
+.frm_form_field.frm_third, .frm_form_field.frm_fourth, .frm_form_field.frm_fifth, .frm_form_field.frm_inline{clear:none;float:left;}
+.frm_form_field.frm_left_half, .frm_form_field.frm_left_third, .frm_form_field.frm_left_two_thirds, .frm_form_field.frm_left_fourth, .frm_form_field.frm_left_fifth, .frm_form_field.frm_left_inline, .frm_form_field.frm_first_half, .frm_form_field.frm_first_third, .frm_form_field.frm_first_two_thirds, .frm_form_field.frm_first_fourth, .frm_form_field.frm_first_fifth, .frm_form_field.frm_first_inline{clear:left;float:left;}
+.frm_form_field.frm_right_half, .frm_form_field.frm_right_third, .frm_form_field.frm_right_two_thirds, .frm_form_field.frm_right_fourth, .frm_form_field.frm_right_fifth, .frm_form_field.frm_right_inline, .frm_form_field.frm_last_half, .frm_form_field.frm_last_third, .frm_form_field.frm_last_two_thirds, .frm_form_field.frm_last_fourth, .frm_form_field.frm_last_fifth, .frm_form_field.frm_last_inline{clear:none;float:right;}
+.frm_form_field.frm_left_half, .frm_form_field.frm_right_half, .frm_form_field.frm_first_half, .frm_form_field.frm_last_half{float: left;margin: 0 0 15px 0px;width: 287px;}
+.frm_form_field.frm_left_half, .frm_form_field.frm_first_half{margin-right:4%;}
+.frm_form_field.frm_left_half.frm_left_container .frm_primary_label, .frm_form_field.frm_right_half.frm_left_container .frm_primary_label, .frm_form_field.frm_left_half.frm_right_container .frm_primary_label, .frm_form_field.frm_right_half.frm_right_container .frm_primary_label, .frm_form_field.frm_first_half.frm_left_container .frm_primary_label, .frm_form_field.frm_last_half.frm_left_container .frm_primary_label, .frm_form_field.frm_first_half.frm_right_container .frm_primary_label, .frm_form_field.frm_last_half.frm_right_container .frm_primary_label{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;max-width:25%;margin-right:0;margin-left:0;}
+.frm_form_field.frm_left_half.frm_left_container .frm_primary_label, .frm_form_field.frm_right_half.frm_left_container .frm_primary_label, .frm_form_field.frm_first_half.frm_left_container .frm_primary_label, .frm_form_field.frm_last_half.frm_left_container .frm_primary_label{padding-right:10px;}
+.frm_form_field.frm_left_half.frm_right_container .frm_primary_label, .frm_form_field.frm_right_half.frm_right_container .frm_primary_label, .frm_form_field.frm_first_half.frm_right_container .frm_primary_label, .frm_form_field.frm_last_half.frm_right_container .frm_primary_label{padding-left:10px;}
+.frm_form_field.frm_left_container input, .frm_form_field.frm_left_container select, .frm_form_field.frm_left_container textarea, .frm_form_field.frm_right_container input, .frm_form_field.frm_right_container select, .frm_form_field.frm_right_container textarea{max-width:75%;}
+.frm_form_field.frm_left_two_thirds, .frm_form_field.frm_right_two_thirds, .frm_form_field.frm_first_two_thirds, .frm_form_field.frm_last_two_thirds {width:60%;}
+.frm_form_field.frm_left_third, .frm_form_field.frm_first_third, .frm_form_field.frm_third, .frm_form_field.frm_left_two_thirds, .frm_form_field.frm_first_two_thirds {margin-right:5%;}
+.frm_form_field.frm_left_fourth, .frm_form_field.frm_fourth, .frm_form_field.frm_right_fourth, .frm_form_field.frm_first_fourth, .frm_form_field.frm_last_fourth{width:22%;}
+.frm_form_field.frm_left_fourth, .frm_form_field.frm_fourth, .frm_form_field.frm_first_fourth{margin-right:4%;}
+.frm_form_field.frm_left_fifth, .frm_form_field.frm_fifth, .frm_form_field.frm_right_fifth, .frm_form_field.frm_first_fifth, .frm_form_field.frm_last_fifth{width:16%;}
+.frm_form_field.frm_left_fifth, .frm_form_field.frm_fifth, .frm_form_field.frm_first_fifth{margin-right:5%;}
+.frm_form_field.frm_left_inline, .frm_form_field.frm_first_inline, .frm_form_field.frm_inline, .frm_form_field.frm_right_inline, .frm_form_field.frm_last_inline{width:auto;}
+.frm_form_field.frm_left_inline, .frm_form_field.frm_first_inline, .frm_form_field.frm_inline{margin-right:4%;}
+.frm_full, .frm_full input, .frm_full select, .frm_full textarea{width:100% !important;margin-bottom: 15px;float:left;margin-right: 4%;margin: 0 0 15px 0px;}
+.frm_full .wp-editor-wrap input{width:auto !important;}
+.frm_form_field.frm_two_col .frm_radio, .frm_form_field.frm_three_col .frm_radio, .frm_form_field.frm_four_col .frm_radio, .frm_form_field.frm_two_col .frm_checkbox, .frm_form_field.frm_three_col .frm_checkbox, .frm_form_field.frm_four_col .frm_checkbox {float:left; margin-right:5px;}
+.frm_form_field.frm_two_col .frm_radio, .frm_form_field.frm_two_col .frm_checkbox {width:45%;}
+.frm_form_field.frm_three_col .frm_radio, .frm_form_field.frm_three_col .frm_checkbox {width:30%;}
+.frm_form_field.frm_four_col .frm_radio, .frm_form_field.frm_four_col .frm_checkbox  {width:20%; margin-right:3px;}
+.frm_form_field.frm_two_col .frm_opt_container, .frm_form_field.frm_three_col .frm_opt_container, .frm_form_field.frm_four_col .frm_opt_container{background:none;}
+.frm_form_field.frm_scroll_box .frm_opt_container{height: 100px; overflow:auto;}
+.frm_form_field.frm_two_col .frm_opt_container:after, .frm_form_field.frm_three_col .frm_opt_container:after, .frm_form_field.frm_four_col .frm_opt_container:after{content:".";display:block;clear:both;visibility:hidden;line-height:0;height:0;}
+.frm_form_field.frm_total input, .frm_form_field.frm_total textarea{opacity:1;background-color:transparent;border:none;font-weight:bold;-moz-box-shadow:none;-webkit-box-shadow:none;box-shadow:none;}
+.frm_forms .frm_inline_container.frm_grid_first label.frm_primary_label, .frm_forms .frm_inline_container.frm_grid label.frm_primary_label, .frm_forms .frm_inline_container.frm_grid_odd label.frm_primary_label, .frm_forms .frm_inline_container.frm_grid_first .frm_opt_container, .frm_forms .frm_inline_container.frm_grid .frm_opt_container, .frm_forms .frm_inline_container.frm_grid_odd .frm_opt_container {margin-right:0;}
+
+.frm_text_block{margin-left:20px;}
+.frm_text_block input, .frm_text_block label.frm_primary_label{margin-left:-20px;}
+.frm_text_block .frm_checkbox input[type=checkbox], .frm_text_block .frm_radio input[type=radio]{margin-right:4px;}
+.frm_clearfix:after{content: ".";display: block;clear: both;visibility: hidden;line-height: 0;height: 0;}
+.frm_clearfix{display: inline-block;}
+html[xmlns] .frm_clearfix{display: block;}
+* html .frm_clearfix{height:1%;}
+
+.frm_forms .frm_form_fieldset{
+    background: none repeat scroll 0 0 #FAFAFA;
+    border: 1px solid #E0E0E0;
+    margin: 0 0 20px;
+    padding: 18px 25px;
+}
+
+.frm_forms .frm_form_fieldset .frm_pos_top{
+    color: #00308F;
+    font-size: 20px;
+    font-weight: normal;
+    margin: 0 0 20px;
+}
+
+.frm_forms .frm_submit{    
+    margin: 20px 0 0;
+    padding: 20px 0;
+}
+
+.frm_forms .frm_submit:before, .frm_forms .frm_submit:after{
+    content: " ";
+    display: table;
+}
+.frm_forms .frm_submit:after{
+    float: left;
+    clear: left;
+}
+
+.frm_forms .frm_submit p{
+    color: #666666;
+    float: left;
+    font-size: 12px;
+}
+
+.frm_forms .frm_submit input.bt-orange2{
+    float: right;
+    margin-right: 150px;   
+    background: url("https://www.jbm-medical.com/wp-content/themes/appelmedical/img/chevron.png") no-repeat scroll 100% 50% #F49100;
+    border: 0 none;
+    color: #FFFFFF;
+    display: inline-block;
+    float: right;
+    font-family: Tahoma,Arial,Helvetica,sans-serif;
+    font-size: 22px !important;
+    height: 50px;
+    line-height: 51px;
+    text-transform: lowercase;
+    width: auto;
+}
+
+.frm_forms .frm_submit input.bt-orange2:focus,.frm_forms .frm_submit input.bt-orange2:hover{
+    background-color: #F6A733;
+}
+
+.frm_optin{
+    width:600px;
+}
+
+.frm_optin label{
+    float: left;
+    margin: 0 3px 0 0;
+    font-weight: normal;
+    overflow: hidden;
+    display: block;
+}
+
+.frm_optin label a{
+    color: #2175D9;
+}
+
+.frm_optin label a:hover{
+    color: #4D92E1;
+    cursor:pointer;
+}
+
+.frm_optin .frm_required{
+    float:left;
+}
+
+.frm_form_field.frm_frm_full{margin: 0 0 15px 0px;width: 287px;}
+
+.frm_checkbox #field_cgu-0{
+   margin-top:30px !important; 
+}
