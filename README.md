@@ -3,12 +3,19 @@
 Retrouvez les composants ici :  
 https://numerik-ea.github.io/composants/
 
-### Sauvegarder un composant
-- Sauvegarder la page web complète (avec les images, css, et js)
-- Modifier la page HTML et ne garder que le composant
-- Créer un dossier pour le type de composant s'il n'est pas déjà créé
-- Créer un dossier avec le nom de domaine du site où se trouve/trouvait le composant dans le dossier de type de composant
-- Renommer le fichier HTML index.html
-- Renommer le dossier "files" en "assets"
-- Mettre à jour les chemins des images, css, js dans index.html
-- Mettre à jour le fichier racine index.html avec le lien vers le composant
+## Sauvegarder une page
+
+1. Installer Chocolatey :  
+https://chocolatey.org/install#individual  
+
+2. Installer wget
+```bash
+choco install wget
+```
+
+3. Lancer le script powershell suivant puis répondre aux questions du script
+```bash
+.\telecharger-page.ps1
+```
+
+
