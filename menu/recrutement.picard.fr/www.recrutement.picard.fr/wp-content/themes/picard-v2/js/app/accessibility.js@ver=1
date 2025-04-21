@@ -1,0 +1,15 @@
+document.getElementById('toggleAccessibility').addEventListener('click', function() {
+    document.body.classList.toggle('accessible-mode');
+  
+    // Vous pouvez également enregistrer le mode accessible dans le localStorage pour le conserver lors des chargements de page
+    if (document.body.classList.contains('accessible-mode')) {
+      localStorage.setItem('accessibleMode', 'enabled');
+    } else {
+      localStorage.removeItem('accessibleMode');
+    }
+  });
+  
+  // Activer le mode accessible si celui-ci est sauvegardé dans le localStorage
+  if (localStorage.getItem('accessibleMode') === 'enabled') {
+    document.body.classList.add('accessible-mode');
+  }
