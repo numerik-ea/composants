@@ -11,10 +11,10 @@ if (-not ($url -match "https?://([^/]+)")) {
 # Demander le dossier de sauvegarde
 $saveDir = Read-Host "Entrez le chemin du dossier où sauvegarder le contenu (ex: C:\Users\MonDossier)"
 
-# Vérifier si le dossier existe, sinon le créer
+# Vérifier si le dossier existe, sinon le créer de manière récursive
 if (-not (Test-Path $saveDir)) {
     Write-Host "Le dossier n'existe pas. Création du dossier..." -ForegroundColor Yellow
-    New-Item -ItemType Directory -Path $saveDir | Out-Null
+    New-Item -ItemType Directory -Path $saveDir -Force | Out-Null
     Write-Host "Dossier créé avec succès." -ForegroundColor Green
 }
 
