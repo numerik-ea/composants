@@ -1,0 +1,63 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+h1 {
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+.folder {
+    margin-left: 20px;
+    border-left: 2px solid #ddd;
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+.folder-title {
+    font-weight: bold;
+    color: #666;
+    margin: 0;
+    font-size: 1.1em;
+    text-transform: capitalize;
+}
+
+.folder-title:nth-child(n+2) {
+    margin-top: 30px;
+}
+
+.file-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.file-item {
+    margin: 5px 0;
+}
+
+.file-link {
+    color: #0066cc;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.file-link:hover {
+    text-decoration: underline;
+}
+
+.empty-folder {
+    color: #999;
+    font-style: italic;
+}
+
+.file-description {
+    color: #666;
+    font-size: 0.9em;
+    margin: 0;
+} 
