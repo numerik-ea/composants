@@ -26,14 +26,17 @@
         .folder-title {
             font-weight: bold;
             color: #666;
-            margin-top: 15px;
+            margin: 0;
             font-size: 1.1em;
             text-transform: capitalize;
+        }
+        .folder-title:nth-child(n+2) {
+            margin-top: 10px;
         }
         .file-list {
             list-style-type: none;
             padding-left: 0;
-            margin-top: 10px;
+            margin: 0;
         }
         .file-item {
             margin: 5px 0;
@@ -42,7 +45,6 @@
             color: #0066cc;
             text-decoration: none;
             display: inline-block;
-            padding: 3px 0;
         }
         .file-link:hover {
             text-decoration: underline;
@@ -51,19 +53,31 @@
             color: #999;
             font-style: italic;
         }
+        .file-description {
+            color: #666;
+            font-size: 0.9em;
+            margin: 0;
+        }
     </style>
 </head>
 <body>
     <h1>Liste des composants</h1>
     <div class="folder">
-        <p class="folder-title">carrousel</p>
+        <h2 class="folder-title">carrousel</h2>
         <ul class="file-list">
             <li class="file-item"><a href="carrousel/bonnard-marais.com/index.html" class="file-link">bonnard-marais.com</a></li>
         </ul>
-        <p class="folder-title">menu</p>
+        <h2 class="folder-title">menu</h2>
         <ul class="file-list">
-            <li class="file-item"><a href="menu/bordeaux.fr/index.html" class="file-link">bordeaux.fr</a></li>
-            <li class="file-item"><a href="menu/recrutement.picard.fr/www.recrutement.picard.fr/entreprise/index.html" class="file-link">recrutement.picard.fr</a></li>
+            <li class="file-item">
+                <a href="menu/bordeaux.fr/index.html" class="file-link">bordeaux.fr</a>
+                <p class="file-description">(menu à la tabulation devient visible comme au survol)</p>
+            </li>
+            
+            <li class="file-item">
+                <a href="menu/recrutement.picard.fr/www.recrutement.picard.fr/entreprise/index.html" class="file-link">recrutement.picard.fr</a>
+                <p class="file-description">(menu avec option mode contrasté)</p>
+            </li>
         </ul>
     </div>  
 </body>
