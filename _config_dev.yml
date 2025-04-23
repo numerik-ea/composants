@@ -1,0 +1,13 @@
+url: ""
+baseurl: "/"
+
+# Build settings
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - .gitignore
+  - .DS_Store
+  - switch_gemfile.sh
+  - switch_gemfile.ps1
+  - LICENSE
