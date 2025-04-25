@@ -13,9 +13,6 @@ h1 {
 }
 
 .folder {
-    margin-left: 20px;
-    border-left: 2px solid #ddd;
-    padding-left: 20px;
     margin-bottom: 20px;
 }
 
@@ -38,6 +35,25 @@ h1 {
 }
 
 .component {
+    margin: 10px 0;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.component:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.component-details {
+    margin-top: 10px;
+    margin-left: 20px;
+    padding-left: 10px;
+}
+
+.component-details li {
     margin: 5px 0;
 }
 
@@ -95,10 +111,6 @@ h1 {
 .badge-failure {
     background-color: #E57373;
     color: white;
-}
-
-.badge-container {
-    margin: 0;
 }
 
 .label-detail {
