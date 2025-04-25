@@ -41,14 +41,26 @@ h1 {
     margin: 5px 0;
 }
 
-.file-link {
+.component-link {
     color: #0066cc;
     text-decoration: none;
     display: inline-block;
 }
 
-.file-link:hover {
+.component-link:hover {
     text-decoration: underline;
+}
+    
+.page-link {
+    color: #757575;
+    font-size: 0.9em;
+    font-weight: 500;
+    text-decoration: underline;
+    display: inline-block;
+}
+
+.page-link:hover {
+    text-decoration: none;
 }
 
 .empty-folder {
@@ -60,10 +72,6 @@ h1 {
     color: #666;
     font-size: 0.9em;
     margin: 0;
-}
-
-.component-details {
-    margin-left: 30px;
 }
 
 .badge {
@@ -91,4 +99,10 @@ h1 {
 
 .badge-container {
     margin: 0;
+}
+
+.label-detail {
+    color: #757575;
+    font-size: 0.9em;
+    font-weight: 500;
 }
