@@ -118,3 +118,14 @@ h1 {
     font-size: 0.9em;
     font-weight: 500;
 }
+
+footer a {
+    color: #0066cc;
+    text-decoration: none;
+    display: inline-block;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
