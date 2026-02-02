@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+/*.fr-card:not(.fr-card--no-background){
+    background: transparent;
+}*/
+
+.fr-modal .fr-grid-row .fr-card {
+    height: auto !important;
+    aspect-ratio: auto;
+}
+
+.rubrique .fr-card.fr-enlarge-link .fr-card__title a::after {
+    bottom: unset;
+}
