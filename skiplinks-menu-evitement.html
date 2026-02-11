@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu d'évitement</title>
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    /* Menu d'évitement */
+    .skiplinks {
+      position: absolute;
+      top: -100%;
+      left: 0;
+      display: flex;
+      gap: 8px;
+      padding: 8px 16px;
+      width: 100%;
+      z-index: 1000;
+      background: #1a1a2e;
+      transition: top 0.2s;
+    }
+
+    .skiplinks:focus-within {
+      top: 0;
+    }
+
+    .skiplinks a {
+      padding: 8px 16px;
+      background: #e94560;
+      color: #fff;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .skiplinks a:focus {
+      outline: 3px solid #fff;
+      outline-offset: 2px;
+    }
+
+    /* Sections de la page */
+    nav, main, section, footer {
+      padding: 48px 24px;
+    }
+
+    nav {
+      background: #1a1a2e;
+      color: #fff;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    .search {
+      background: #f4f4f8;
+    }
+
+    .search > div {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    footer {
+      background: #1a1a2e;
+      color: #fff;
+    }
+
+    footer > div {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    h1, h2 {
+      margin-bottom: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menu d'évitement -->
+  <nav class="skiplinks" aria-label="Accès rapide">
+    <a href="#contenu">Contenu</a>
+    <a href="#menu">Menu</a>
+    <a href="#recherche">Recherche</a>
+    <a href="#pied-de-page">Pied de page</a>
+  </nav>
+
+  <!-- Menu -->
+  <nav id="menu" tabindex="-1" role="navigation" aria-label="Menu principal">
+    <ul>
+      <li><a href="#">Accueil</a></li>
+      <li><a href="#">À propos</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contenu -->
+  <main id="contenu" tabindex="-1">
+    <h1>Contenu principal</h1>
+    <p>Utilisez la touche <kbd>Tab</kbd> pour naviguer entre les liens d'évitement.</p>
+  </main>
+
+  <!-- Recherche -->
+  <section id="recherche" tabindex="-1" class="search" aria-label="Recherche">
+    <div>
+      <h2>Recherche</h2>
+      <form role="search">
+        <label for="search-input">Rechercher :</label>
+        <input type="search" id="search-input" name="q">
+        <button type="submit">Rechercher</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer id="pied-de-page" tabindex="-1">
+    <div>
+      <h2>Pied de page</h2>
+      <p>&copy; 2026 — Tous droits réservés</p>
+    </div>
+  </footer>
+
+</body>
+</html>
