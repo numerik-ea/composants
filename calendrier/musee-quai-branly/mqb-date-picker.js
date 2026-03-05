@@ -528,7 +528,7 @@
           exStartDate = new Date(minD.getFullYear(), minD.getMonth(), 1);
         }
       } else {
-        exStartDate = new Date(_todayEx.getFullYear(), _todayEx.getMonth(), 1);
+        exStartDate = new Date(_todayEx);
       }
       const _lastDayOfExMonth = new Date(exStartDate.getFullYear(), exStartDate.getMonth() + 1, 0).getDate();
       const exEndDate = exStartDate.getDate() === _lastDayOfExMonth
