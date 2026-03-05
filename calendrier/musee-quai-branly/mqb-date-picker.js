@@ -58,6 +58,8 @@
  *
  * — Apparence —
  * color          {string}        Couleur principale CSS. Défaut : '#8B1535'.
+ * zIndex         {number}        z-index de l'overlay. Défaut : 200.
+ *                                À augmenter en cas de conflit avec d'autres couches.
  *
  * — Responsive —
  * breakpoint     {number}        Largeur (px) à partir de laquelle le calendrier
@@ -123,7 +125,7 @@
         display: none;
         position: fixed;
         inset: 0;
-        z-index: 200;
+        z-index: var(--mqb-z-index, 200);
       }
       .mqb-overlay.mqb-visible { display: block; }
 
@@ -559,6 +561,7 @@
       this._endError = document.getElementById(`mqb-end-${id}-error`);
 
       this._dialog.style.setProperty('--mqb-brand', this._opts.color);
+      if (this._opts.zIndex != null) this._overlay.style.setProperty('--mqb-z-index', this._opts.zIndex);
 
       if (this._opts.trigger) {
         const el = typeof this._opts.trigger === 'string'
