@@ -859,16 +859,30 @@
         btn.addEventListener('keydown', e => this._handleCalKeydown(e));
       });
 
+      const fmtLong = d => {
+        const day = DAYS_FR[(d.getDay() + 6) % 7];
+        const num = String(d.getDate()).padStart(2, '0');
+        const month = MONTHS_FR[d.getMonth()].toLowerCase();
+        return `${day} ${num} ${month} ${d.getFullYear()}`;
+      };
+
       if (_startDate) {
         this._confirmBtn.disabled = false;
         this._confirmBtn.removeAttribute('aria-disabled');
         this._confirmBtn.classList.add('mqb-active');
-        this._confirmBtn.textContent = _endDate ? 'Choisir cette période' : 'Choisir cette date';
+        if (_endDate) {
+          this._confirmBtn.textContent = 'Choisir cette période';
+          this._confirmBtn.setAttribute('aria-label', `du ${fmtLong(_startDate)} au ${fmtLong(_endDate)} Choisir cette période`);
+        } else {
+          this._confirmBtn.textContent = 'Choisir cette date';
+          this._confirmBtn.setAttribute('aria-label', `${fmtLong(_startDate)} Choisir cette date`);
+        }
       } else {
         this._confirmBtn.disabled = true;
         this._confirmBtn.setAttribute('aria-disabled', 'true');
         this._confirmBtn.classList.remove('mqb-active');
         this._confirmBtn.textContent = 'Choisir cette date';
+        this._confirmBtn.removeAttribute('aria-label');
       }
 
       if (document.activeElement !== this._startInput && this._startInput.getAttribute('aria-invalid') !== 'true') {
