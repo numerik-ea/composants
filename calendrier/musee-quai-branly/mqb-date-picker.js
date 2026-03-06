@@ -111,6 +111,10 @@
   const DAYS_FR = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
   const BREAKPOINT = 768;
 
+  // NVDA est exclusivement Windows ; VoiceOver (Mac/iOS) et TalkBack (Android)
+  // ne bénéficient pas de role="application" — on l'active uniquement sur Windows.
+  const _isWindows = /Win/i.test(navigator.userAgentData?.platform ?? navigator.platform ?? '');
+
   let _cssInjected = false;
   let _counter = 0;
 
@@ -378,9 +382,9 @@
     const mlid = `mqb-month-label-${id}`;
     return `
       <div class="mqb-overlay" id="mqb-overlay-${id}" role="none">
-        <div class="mqb-dialog" id="mqb-dialog-${id}" role="dialog" aria-label="Sélecteur de date">
+        <div class="mqb-dialog" id="mqb-dialog-${id}" role="dialog" aria-labelledby="mqb-title-${id}">
           <div class="mqb-dialog-header">
-            <h2 class="mqb-dialog-title">Choisir une date</h2>
+            <h2 class="mqb-dialog-title" id="mqb-title-${id}">Choisir une date</h2>
             <button class="mqb-close-btn" id="mqb-close-${id}" aria-label="Fermer le sélecteur de date">&#x2715;</button>
           </div>
           <div class="mqb-date-fields">
@@ -409,7 +413,7 @@
               <span id="${eid}-error" class="mqb-error-msg" role="alert"></span>
             </div>
           </div>
-          <div role="application">
+          <div${_isWindows ? ' role="application"' : ''}>
             <div class="mqb-month-nav">
               <button class="mqb-nav-btn" id="mqb-prev-${id}" aria-label="Mois précédent">&#8592;</button>
               <div id="${mlid}" class="mqb-month-label" aria-live="polite" aria-atomic="true"></div>
@@ -952,6 +956,12 @@
       this._currentMode = 'modal';
       this._overlay.classList.add('mqb-mode-modal');
       this._dialog.setAttribute('aria-modal', 'true');
+
+      // TalkBack (Android) ignore aria-modal : on masque explicitement les siblings
+      this._hiddenSiblings = [...document.body.children]
+        .filter(el => el !== this._overlay && !el.hasAttribute('aria-hidden'));
+      this._hiddenSiblings.forEach(el => el.setAttribute('aria-hidden', 'true'));
+
       requestAnimationFrame(() => {
         this._closeBtn.focus();
       });
@@ -1014,6 +1024,12 @@
       document.removeEventListener('keydown', this._onEsc);
       document.removeEventListener('keydown', this._trapFocus);
       this._dialog.removeAttribute('aria-modal');
+
+      // Restore siblings masqués pour TalkBack
+      if (this._hiddenSiblings) {
+        this._hiddenSiblings.forEach(el => el.removeAttribute('aria-hidden'));
+        this._hiddenSiblings = null;
+      }
       this._dialog.style.top = '';
       this._dialog.style.left = '';
       this._currentMode = null;
