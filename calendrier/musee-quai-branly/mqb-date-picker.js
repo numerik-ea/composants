@@ -152,17 +152,15 @@
       }
 
       @media (max-width: 767px) {
-        .mqb-overlay.mqb-mode-modal { align-items: stretch; }
+        .mqb-overlay.mqb-mode-modal { align-items: flex-start; }
         .mqb-overlay.mqb-mode-modal .mqb-dialog {
+          position: absolute;
+          top: 0;
           width: 100%;
           max-width: 100%;
-          min-height: 100%;
           border-radius: 0;
           box-shadow: none;
-          display: flex;
-          flex-direction: column;
         }
-        .mqb-overlay.mqb-mode-modal .mqb-dialog-footer { margin-top: auto; }
       }
 
       .mqb-dialog-header {
