@@ -151,6 +151,20 @@
         font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       }
 
+      @media (max-width: 767px) {
+        .mqb-overlay.mqb-mode-modal { align-items: stretch; }
+        .mqb-overlay.mqb-mode-modal .mqb-dialog {
+          width: 100%;
+          max-width: 100%;
+          min-height: 100%;
+          border-radius: 0;
+          box-shadow: none;
+          display: flex;
+          flex-direction: column;
+        }
+        .mqb-overlay.mqb-mode-modal .mqb-dialog-footer { margin-top: auto; }
+      }
+
       .mqb-dialog-header {
         align-items: center;
         justify-content: space-between;
@@ -663,6 +677,7 @@
         return '';
       };
 
+
       input.addEventListener('blur', () => {
         const d = this._parseInput(input.value);
         this._setError(input, errorEl, validate(d, input.value));
@@ -1057,8 +1072,8 @@
      */
     destroy() {
       window.removeEventListener('resize', this._onResize);
-      document.removeEventListener('keydown', this._onEsc);
       document.removeEventListener('keydown', this._trapFocus);
+      document.removeEventListener('keydown', this._onEsc);
       this._overlay.remove();
     }
   }
