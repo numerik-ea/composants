@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Démo – MQBDatePicker</title>
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -18,7 +25,10 @@
       min-height: 100vh;
     }
 
-    h1 { font-size: 1.25rem; color: #333; }
+    h1 {
+      font-size: 1.25rem;
+      color: #333;
+    }
 
     .demo-row {
       display: flex;
@@ -41,8 +51,15 @@
       align-items: center;
       gap: 10px;
     }
-    .trigger-btn:focus-visible { outline: 3px solid #0057a8; outline-offset: 2px; }
-    .trigger-btn[aria-expanded="true"] { opacity: 0.9; }
+
+    .trigger-btn:focus-visible {
+      outline: 3px solid #0057a8;
+      outline-offset: 2px;
+    }
+
+    .trigger-btn[aria-expanded="true"] {
+      opacity: 0.9;
+    }
 
     #output {
       font-size: 0.9rem;
@@ -51,40 +68,39 @@
     }
   </style>
 </head>
+
 <body>
 
-<h1>Démo MQBDatePicker</h1>
+  <h1>Démo MQBDatePicker</h1>
 
-<div class="demo-row">
-  <button class="mqb-trigger trigger-btn">
-    <span>Choisir une date</span>
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-         stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-         aria-hidden="true" focusable="false">
-      <rect x="3" y="4" width="18" height="18" rx="2"/>
-      <path d="M16 2v4M8 2v4M3 10h18"/>
-    </svg>
-  </button>
-</div>
+  <div class="demo-row">
+    <button id="date-picker-trigger" class="mqb-trigger trigger-btn">
+      <span>Choisir une date</span>
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2.5" stroke-linecap="round"
+        stroke-linejoin="round" aria-hidden="true" focusable="false">
+        <rect x="3" y="4" width="18" height="18" rx="2" />
+        <path d="M16 2v4M8 2v4M3 10h18" />
+      </svg>
+    </button>
+  </div>
 
-<script src="mqb-date-picker.js"></script>
-<script>
-  const output = document.getElementById('output');
+  <script src="mqb-date-picker.js"></script>
+  <script>
+    MQBDatePicker({
+      trigger: '#date-picker-trigger',
+      breakpoint: 768,
+      returnFormat: 'jj/mm/aaaa',
+      onConfirm({ startDate, endDate }) {
+        console.log('Date de début confirmée:', startDate);
 
-  let selectedStart = null;
-  let selectedEnd   = null;
-
-  MQBDatePicker.initAll('.mqb-trigger', {
-    breakpoint: 768,
-    returnFormat: 'jj/mm/aaaa',
-    // onChange(dateObj) {
-    //   console.log('Date sélectionnée changée :', dateObj);
-    // },cd
-    onConfirm(dateObj) {
-      console.log('Date sélectionnée confirmée:', dateObj);
-    },
-  });
-</script>
+        if (endDate !== undefined) {
+          console.log('Date de fin confirmée:', endDate);
+        }
+      },
+    });
+  </script>
 
 </body>
+
 </html>
