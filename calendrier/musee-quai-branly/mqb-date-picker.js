@@ -769,6 +769,13 @@
 
       this._monthLabel.textContent = `${MONTHS_FR[vm]} ${vy}`;
 
+      const prevM = vm === 0 ? 11 : vm - 1;
+      const prevY = vm === 0 ? vy - 1 : vy;
+      const nextM = vm === 11 ? 0 : vm + 1;
+      const nextY = vm === 11 ? vy + 1 : vy;
+      this._prevBtn.setAttribute('aria-label', `Mois précédent ${MONTHS_FR[prevM]} ${prevY}`);
+      this._nextBtn.setAttribute('aria-label', `Mois suivant ${MONTHS_FR[nextM]} ${nextY}`);
+
       const minMonth = new Date(_minDate.getFullYear(), _minDate.getMonth(), 1).getTime();
       const currMonth = new Date(vy, vm, 1).getTime();
       this._prevBtn.disabled = currMonth <= minMonth;
@@ -906,9 +913,9 @@
         return `${day} ${num} ${month} ${d.getFullYear()}`;
       };
       this._announce.textContent = this._startDate && this._endDate
-        ? `Date de début : ${fmtLong(this._startDate)}, date de fin : ${fmtLong(this._endDate)}`
+        ? `Date de début ${fmtLong(this._startDate)}, date de fin ${fmtLong(this._endDate)}`
         : this._startDate
-          ? `Date de début sélectionnée : ${fmtLong(this._startDate)}`
+          ? `Date de début sélectionnée ${fmtLong(this._startDate)}`
           : 'Sélection effacée.';
 
       this._render();
