@@ -383,7 +383,7 @@
         <div class="mqb-dialog" id="mqb-dialog-${id}" role="dialog" aria-label="Sélecteur de date">
           <div class="mqb-dialog-header">
             <h2 class="mqb-dialog-title">Choisir une date</h2>
-            <button class="mqb-close-btn" id="mqb-close-${id}" aria-label="Fermer">&#x2715;</button>
+            <button class="mqb-close-btn" id="mqb-close-${id}" aria-label="Fermer le sélecteur de date">&#x2715;</button>
           </div>
           <div class="mqb-date-fields">
             <div class="mqb-date-field">
