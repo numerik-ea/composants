@@ -559,6 +559,13 @@
       tpl.innerHTML = _buildHTML(id, exStart, exEnd);
       document.body.appendChild(tpl.firstElementChild);
 
+      const liveEl = document.createElement('div');
+      liveEl.setAttribute('aria-live', 'polite');
+      liveEl.setAttribute('aria-atomic', 'true');
+      liveEl.className = 'mqb-sr-only';
+      document.body.appendChild(liveEl);
+      this._announceConfirm = liveEl;
+
       this._overlay = document.getElementById(`mqb-overlay-${id}`);
       this._dialog = document.getElementById(`mqb-dialog-${id}`);
       this._closeBtn = document.getElementById(`mqb-close-${id}`);
@@ -588,6 +595,15 @@
           el.setAttribute('aria-haspopup', 'dialog');
           el.setAttribute('aria-expanded', 'false');
           el.addEventListener('click', () => this.open());
+          // Sur Windows/NVDA : envelopper le déclencheur dans role="application"
+          // pour éviter la double lecture Browse mode → Focus mode.
+          if (_isWindows) {
+            const wrapper = document.createElement('div');
+            wrapper.setAttribute('role', 'application');
+            wrapper.setAttribute('aria-label', el.textContent.trim());
+            el.parentNode.insertBefore(wrapper, el);
+            wrapper.appendChild(el);
+          }
         }
       }
     }
@@ -624,7 +640,16 @@
         if (typeof this._opts.onConfirm === 'function') {
           this._opts.onConfirm(this._buildReturnValue());
         }
-        this.close();
+        const fmtLong = d => {
+          const day = DAYS_FR[(d.getDay() + 6) % 7];
+          const num = String(d.getDate()).padStart(2, '0');
+          const month = MONTHS_FR[d.getMonth()].toLowerCase();
+          return `${day} ${num} ${month} ${d.getFullYear()}`;
+        };
+        this._announceConfirm.textContent = this._endDate
+          ? `du ${fmtLong(this._startDate)} au ${fmtLong(this._endDate)} période sélectionnée`
+          : `${fmtLong(this._startDate)} date sélectionnée`;
+        this.close({ silent: true });
       });
 
       this._wireInput(this._startInput, true);
@@ -1038,8 +1063,9 @@
 
     /**
      * Ferme le calendrier et replace le focus sur le déclencheur.
+     * @param {{ silent?: boolean }} [opts] silent=true évite que les AT annoncent le bouton déclencheur.
      */
-    close() {
+    close({ silent = false } = {}) {
       this._overlay.classList.remove('mqb-visible', 'mqb-mode-modal', 'mqb-mode-popover');
       if (this._triggerEl) this._triggerEl.setAttribute('aria-expanded', 'false');
       document.removeEventListener('keydown', this._onEsc);
@@ -1054,7 +1080,9 @@
       this._dialog.style.top = '';
       this._dialog.style.left = '';
       this._currentMode = null;
-      if (this._triggerEl) this._triggerEl.focus();
+      if (this._triggerEl && !silent) {
+        this._triggerEl.focus();
+      }
     }
 
     /**
