@@ -801,6 +801,12 @@
       this._prevBtn.setAttribute('aria-label', `Mois précédent ${MONTHS_FR[prevM]} ${prevY}`);
       this._nextBtn.setAttribute('aria-label', `Mois suivant ${MONTHS_FR[nextM]} ${nextY}`);
 
+      this._clearBtn.setAttribute('aria-label',
+        !_startDate ? 'Effacer' :
+        !_endDate   ? 'Effacer la date sélectionnée' :
+                      'Effacer la période sélectionnée'
+      );
+
       const minMonth = new Date(_minDate.getFullYear(), _minDate.getMonth(), 1).getTime();
       const currMonth = new Date(vy, vm, 1).getTime();
       this._prevBtn.disabled = currMonth <= minMonth;
