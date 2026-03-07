@@ -559,13 +559,6 @@
       tpl.innerHTML = _buildHTML(id, exStart, exEnd);
       document.body.appendChild(tpl.firstElementChild);
 
-      const liveEl = document.createElement('div');
-      liveEl.setAttribute('aria-live', 'polite');
-      liveEl.setAttribute('aria-atomic', 'true');
-      liveEl.className = 'mqb-sr-only';
-      document.body.appendChild(liveEl);
-      this._announceConfirm = liveEl;
-
       this._overlay = document.getElementById(`mqb-overlay-${id}`);
       this._dialog = document.getElementById(`mqb-dialog-${id}`);
       this._closeBtn = document.getElementById(`mqb-close-${id}`);
@@ -640,15 +633,6 @@
         if (typeof this._opts.onConfirm === 'function') {
           this._opts.onConfirm(this._buildReturnValue());
         }
-        const fmtLong = d => {
-          const day = DAYS_FR[(d.getDay() + 6) % 7];
-          const num = String(d.getDate()).padStart(2, '0');
-          const month = MONTHS_FR[d.getMonth()].toLowerCase();
-          return `${day} ${num} ${month} ${d.getFullYear()}`;
-        };
-        this._announceConfirm.textContent = this._endDate
-          ? `du ${fmtLong(this._startDate)} au ${fmtLong(this._endDate)} période sélectionnée`
-          : `${fmtLong(this._startDate)} date sélectionnée`;
         this.close({ silent: true });
       });
 
