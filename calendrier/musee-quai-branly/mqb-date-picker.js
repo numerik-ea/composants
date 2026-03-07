@@ -111,8 +111,8 @@
   const DAYS_FR = ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche'];
   const BREAKPOINT = 768;
 
-  // NVDA est exclusivement Windows ; VoiceOver (Mac/iOS) et TalkBack (Android)
-  // ne bénéficient pas de role="application" — on l'active uniquement sur Windows.
+  // role="application" est utile uniquement pour NVDA/JAWS sur Windows.
+  // VoiceOver et TalkBack l'ignorent.
   const _isWindows = /Win/i.test(navigator.userAgentData?.platform ?? navigator.platform ?? '');
 
   let _cssInjected = false;
@@ -504,7 +504,7 @@
       this._id = _counter;
       this._opts = Object.assign({
         trigger: null, onConfirm: null, onChange: null, color: '#8B1535', minDate: null, maxDate: null, breakpoint: BREAKPOINT, returnFormat: 'date',
-        fmt: _defaultFmt,
+        fmt: _defaultFmt, focusTarget: null,
       }, options);
 
       const today = new Date();
@@ -588,15 +588,6 @@
           el.setAttribute('aria-haspopup', 'dialog');
           el.setAttribute('aria-expanded', 'false');
           el.addEventListener('click', () => this.open());
-          // Sur Windows/NVDA : envelopper le déclencheur dans role="application"
-          // pour éviter la double lecture Browse mode → Focus mode.
-          if (_isWindows) {
-            const wrapper = document.createElement('div');
-            wrapper.setAttribute('role', 'application');
-            wrapper.setAttribute('aria-label', el.textContent.trim());
-            el.parentNode.insertBefore(wrapper, el);
-            wrapper.appendChild(el);
-          }
         }
       }
     }
@@ -630,10 +621,21 @@
 
       this._confirmBtn.addEventListener('click', () => {
         if (!this._startDate) return;
+        // Masquer les siblings avant onConfirm pour que les mutations DOM
+        // soient silencieuses pour les AT, y compris en mode popover.
+        if (!this._hiddenSiblings) {
+          this._hiddenSiblings = [...document.body.children]
+            .filter(el => el !== this._overlay && !el.hasAttribute('aria-hidden'));
+          this._hiddenSiblings.forEach(el => el.setAttribute('aria-hidden', 'true'));
+        }
         if (typeof this._opts.onConfirm === 'function') {
           this._opts.onConfirm(this._buildReturnValue());
         }
-        this.close({ silent: true });
+        const ft = this._opts.focusTarget;
+        const focusTarget = ft
+          ? (typeof ft === 'string' ? document.querySelector(ft) : ft)
+          : null;
+        this.close({ focusTarget });
       });
 
       this._wireInput(this._startInput, true);
@@ -1064,17 +1066,15 @@
     }
 
     /**
-     * Ferme le calendrier et replace le focus sur le déclencheur.
-     * @param {{ silent?: boolean }} [opts] silent=true évite que les AT annoncent le bouton déclencheur.
+     * Ferme le calendrier. Si focusTarget est fourni, le focus est déplacé vers cet élément, sinon il revient au déclencheur.
      */
-    close({ silent = false } = {}) {
+    close({ focusTarget = null } = {}) {
       this._overlay.classList.remove('mqb-visible', 'mqb-mode-modal', 'mqb-mode-popover');
-      if (this._triggerEl) this._triggerEl.setAttribute('aria-expanded', 'false');
       document.removeEventListener('keydown', this._onEsc);
       document.removeEventListener('keydown', this._trapFocus);
       this._dialog.removeAttribute('aria-modal');
 
-      // Restore siblings masqués pour TalkBack
+      // Restore siblings masqués pour TalkBack / confirmation
       if (this._hiddenSiblings) {
         this._hiddenSiblings.forEach(el => el.removeAttribute('aria-hidden'));
         this._hiddenSiblings = null;
@@ -1082,8 +1082,14 @@
       this._dialog.style.top = '';
       this._dialog.style.left = '';
       this._currentMode = null;
-      if (this._triggerEl && !silent) {
-        this._triggerEl.focus();
+
+      if (this._triggerEl) this._triggerEl.setAttribute('aria-expanded', 'false');
+
+      if (focusTarget) {
+        if (!focusTarget.hasAttribute('tabindex')) focusTarget.setAttribute('tabindex', '-1');
+        focusTarget.focus();
+      } else {
+        if (this._triggerEl) this._triggerEl.focus();
       }
     }
 
