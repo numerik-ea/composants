@@ -903,6 +903,11 @@
         const month = MONTHS_FR[d.getMonth()].toLowerCase();
         return `${day} ${num} ${month} ${d.getFullYear()}`;
       };
+      const fmtShort = d => {
+        const num = String(d.getDate()).padStart(2, '0');
+        const month = MONTHS_FR[d.getMonth()].toLowerCase();
+        return `${num} ${month} ${d.getFullYear()}`;
+      };
 
       if (_startDate) {
         this._confirmBtn.disabled = false;
@@ -910,10 +915,10 @@
         this._confirmBtn.classList.add('mqb-active');
         if (_endDate) {
           this._confirmBtn.textContent = 'Choisir cette période';
-          this._confirmBtn.setAttribute('aria-label', `du ${fmtLong(_startDate)} au ${fmtLong(_endDate)} Choisir cette période`);
+          this._confirmBtn.setAttribute('aria-label', `Choisir cette période, du ${fmtShort(_startDate)} au ${fmtShort(_endDate)}`);
         } else {
           this._confirmBtn.textContent = 'Choisir cette date';
-          this._confirmBtn.setAttribute('aria-label', `${fmtLong(_startDate)} Choisir cette date`);
+          this._confirmBtn.setAttribute('aria-label', `Choisir cette date, ${fmtShort(_startDate)}`);
         }
       } else {
         this._confirmBtn.disabled = true;
