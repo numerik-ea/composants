@@ -61,10 +61,84 @@
       opacity: 0.9;
     }
 
-    #output {
+    /* ── Résultats ── */
+    #resultats {
+      width: 100%;
+      max-width: 640px;
+    }
+
+    #resultats h2 {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 16px;
+    }
+
+    .events-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .event-card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08);
+    }
+
+    .event-card[hidden] {
+      display: none;
+    }
+
+    .event-card .event-title {
+      font-weight: 600;
+      color: #111;
+    }
+
+    .event-card .event-date {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .event-card .event-tag {
+      display: inline-block;
+      margin-top: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: #8B1535;
+      color: #fff;
+      border-radius: 4px;
+      padding: 2px 8px;
+      width: fit-content;
+    }
+
+    #no-results {
+      color: #666;
       font-size: 0.9rem;
-      color: #555;
-      min-height: 1.4em;
+    }
+
+    #no-results[hidden] {
+      display: none;
+    }
+
+    #reset-btn {
+      background: none;
+      border: 2px solid #8B1535;
+      color: #8B1535;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: none;
+    }
+
+    #reset-btn:focus-visible {
+      outline: 3px solid #0057a8;
+      outline-offset: 2px;
     }
   </style>
 </head>
@@ -83,20 +157,120 @@
         <path d="M16 2v4M8 2v4M3 10h18" />
       </svg>
     </button>
+    <button id="reset-btn">Réinitialiser le filtre</button>
   </div>
+
+  <section id="resultats" aria-labelledby="resultats-titre">
+    <h2 id="resultats-titre">Tous les événements</h2>
+    <ul class="events-list" role="list" id="events-list"></ul>
+    <p id="no-results" hidden>Aucun événement pour cette période.</p>
+  </section>
 
   <script src="mqb-date-picker.js"></script>
   <script>
+    const JOURS = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+    const MOIS  = ['janvier','février','mars','avril','mai','juin',
+                   'juillet','août','septembre','octobre','novembre','décembre'];
+
+    function addDays(base, n) {
+      const d = new Date(base);
+      d.setDate(d.getDate() + n);
+      return d;
+    }
+
+    function toISO(d) {
+      return d.toISOString().slice(0, 10);
+    }
+
+    function fmtDate(d) {
+      return `${JOURS[d.getDay()]} ${d.getDate()} ${MOIS[d.getMonth()]} ${d.getFullYear()}`;
+    }
+
+    function fmtISO(str) {
+      // str format jj/mm/aaaa → ISO
+      const [dd, mm, yyyy] = str.split('/');
+      return `${yyyy}-${mm}-${dd}`;
+    }
+
+    // Génération des événements relatifs à aujourd'hui
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const EVENTS = [
+      { title: 'Visite guidée des collections permanentes', tag: 'Visite',     offsetStart: 4,  offsetEnd: 4  },
+      { title: 'Conférence : Arts premiers d\'Océanie',     tag: 'Conférence', offsetStart: 8,  offsetEnd: 8  },
+      { title: 'Atelier famille : masques et costumes',      tag: 'Atelier',    offsetStart: 12, offsetEnd: 16 },
+      { title: 'Projection : Rituels du monde',              tag: 'Projection', offsetStart: 19, offsetEnd: 19 },
+      { title: 'Exposition temporaire : Amazonie vivante',   tag: 'Exposition', offsetStart: 27, offsetEnd: 30 },
+      { title: 'Concert : Musiques du Pacifique',            tag: 'Concert',    offsetStart: 36, offsetEnd: 36 },
+    ];
+
+    const list = document.getElementById('events-list');
+    EVENTS.forEach(ev => {
+      const ds = addDays(today, ev.offsetStart);
+      const de = addDays(today, ev.offsetEnd);
+      const sameDay = ev.offsetStart === ev.offsetEnd;
+      const dateLabel = sameDay
+        ? fmtDate(ds)
+        : `Du ${fmtDate(ds).toLowerCase()} au ${fmtDate(de).toLowerCase()}`;
+
+      const li = document.createElement('li');
+      li.className = 'event-card';
+      li.dataset.start = toISO(ds);
+      li.dataset.end   = toISO(de);
+      li.innerHTML = `
+        <span class="event-title">${ev.title}</span>
+        <span class="event-date">${dateLabel}</span>
+        <span class="event-tag">${ev.tag}</span>`;
+      list.appendChild(li);
+    });
+
+    let cards = document.querySelectorAll('.event-card');
+    const noResults = document.getElementById('no-results');
+    const titre = document.getElementById('resultats-titre');
+    const resetBtn = document.getElementById('reset-btn');
+
+    function filterEvents(startISO, endISO) {
+      cards = document.querySelectorAll('.event-card');
+      let visible = 0;
+      cards.forEach(card => {
+        const cs = card.dataset.start;
+        const ce = card.dataset.end;
+        // L'événement est visible si sa plage chevauche le filtre
+        const overlaps = cs <= (endISO || startISO) && ce >= startISO;
+        card.hidden = !overlaps;
+        if (overlaps) visible++;
+      });
+      noResults.hidden = visible > 0;
+    }
+
+    function resetFilter() {
+      cards.forEach(card => { card.hidden = false; });
+      noResults.hidden = true;
+      titre.textContent = 'Tous les événements';
+      resetBtn.style.display = 'none';
+    }
+
+    resetBtn.addEventListener('click', resetFilter);
+
     MQBDatePicker({
       trigger: '#date-picker-trigger',
       breakpoint: 768,
       returnFormat: 'jj/mm/aaaa',
+      focusTarget: '#resultats-titre',
       onConfirm({ startDate, endDate }) {
-        console.log('Date de début confirmée:', startDate);
+        const startISO = fmtISO(startDate);
+        const endISO = endDate ? fmtISO(endDate) : null;
 
-        if (endDate !== undefined) {
-          console.log('Date de fin confirmée:', endDate);
-        }
+        // Filtrer et mettre à jour le titre pendant que le dialogue est encore
+        // ouvert : la section résultats est masquée aux AT (aria-hidden posé
+        // par le composant), donc les mutations DOM sont silencieuses.
+        // Le focus sur le h2 est placé après, sur un DOM déjà stable.
+        filterEvents(startISO, endISO || startISO);
+        titre.textContent = endDate
+          ? `Événements du ${startDate} au ${endDate}`
+          : `Événements du ${startDate}`;
+        resetBtn.style.display = 'inline-block';
       },
     });
   </script>

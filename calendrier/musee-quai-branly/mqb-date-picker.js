@@ -857,10 +857,17 @@
             isSelEnd ? 'mqb-selected-end' : '',
           ].filter(Boolean).join(' ');
 
+          const isAfterStart = !outside && !!_startDate && !_endDate && d > _startDate;
+          const isBeforeStart = !outside && !!_startDate && (
+            _endDate ? (!isSelStart && !isSelEnd) : d < _startDate
+          );
+
           const ariaLabel = `${DAYS_FR[col]} ${d.getDate()} ${MONTHS_FR[d.getMonth()]} ${d.getFullYear()}`
             + (isToday ? ", aujourd'hui" : '')
             + (isSelStart ? ', date de début sélectionnée' : '')
-            + (isSelEnd ? ', date de fin sélectionnée' : '');
+            + (isSelEnd ? ', date de fin sélectionnée' : '')
+            + (!isSelEnd && isAfterStart ? ', sélectionner la date de fin' : '')
+            + (isBeforeStart ? ', modifier la date de début' : '');
 
           const disabled = outside || isPast || isAfterMax ? 'disabled' : '';
 
