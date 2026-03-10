@@ -1,0 +1,48 @@
+/******************************************************************************************/
+/* REGLE                                                                                  */
+/******************************************************************************************/
+/* style specifique */
+
+/*
+    Bandeau
+*/
+#column_template-pc__ebxHeader__header__bandeau_header_2, #column_template-pc__ebxHeader__header__bandeau_header_0, #template-pc__ebxHeader__header__multilevel_menu_portlet, #template-pc__ebxHeader__header__translate, #template-pc__ebxHeader__header__alertezone {
+    display : none; 
+}
+
+#column_template-pc__content_0, #column_template-pc__content_2, #template-pc__content__page-content__pgPresStand8Content__debat, #js_template_pc__footer_ {
+    display : none; 
+}
+
+
+#column_template-pc__content_1 {
+	padding: 0px;
+	width: 100%;
+}
+
+
+/* Page accueil */
+#template-accueil__ebxHeader__header__multilevel_menu_portlet, #template-accueil__ebxHeader__header__translate, #template-accueil__content__page-content__pagepardefaut__sidelinksleft, #column_template-accueil__content__page-content__pagepardefaut_1 {
+    display : none; 
+}
+
+#template-accueil__content__page-content__pagepardefaut__kiosqueaccueil, #js_template_accueil__footer_, #column_template-accueil__footer__ebxFooter__footer_0, #column_template-accueil__ebxHeader__header__bandeau_header_2, #column_template-accueil__ebxHeader__header__bandeau_header_0 {
+    display : none; 
+}
+
+#column_template-accueil__content__page-content__pagepardefaut_0 {
+    width: 100%;
+}
+
+#column_template-accueil__content__page-content__pagepardefaut_0, #column_template-pc__content__page-content__pagepardefaut_0 {
+    border-right: 0px;
+    padding-right: 0px;
+}
+
+#actuAccueil .wrapper {
+    height: inherit;
+}
+.accueil_link {
+    display : none;
+}
+

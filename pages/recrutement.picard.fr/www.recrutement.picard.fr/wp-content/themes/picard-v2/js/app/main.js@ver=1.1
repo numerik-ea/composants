@@ -1,0 +1,244 @@
+// Dropdown SA Desktop
+function dropdownMenu() {
+  document.getElementById("myDropdown").classList.toggle("show");
+};
+
+// Ouvrir le menu déroulant lors du mouseleave
+document.getElementById("myDropdown").addEventListener("mouseenter", function () {
+  this.classList.add("show");
+});
+
+// Fermer le menu déroulant lors du mouseleave
+document.getElementById("myDropdown").addEventListener("mouseleave", function () {
+  this.classList.remove("show");
+});
+
+// Dropdown SA Mobile
+const dropdown = document.querySelector('#mobileDropdown');
+const states = [];
+
+// Add event listeners for click events on the toggle button
+dropdown.addEventListener('click', () => {
+  // Toggle the 'show' class on the dropdown element to switch between 
+  states
+  dropdown.classList.toggle('show');
+});
+
+
+var headerone = document.getElementById("header-one");
+var headertwo = document.getElementById("header-two");
+var mainElements = document.getElementsByClassName("main");
+var sticky = headertwo.offsetTop;
+
+
+//Menu Mobile
+document.getElementById('toggle').addEventListener('click', function () {
+  this.classList.toggle('on');
+  if (this.classList.contains('on')) {
+    document.getElementById('menu-mobile').style.display = 'block';
+  } else {
+    document.getElementById('menu-mobile').style.display = 'none';
+  }
+});
+
+//Header Fix
+function headerFixed() {
+  if (window.pageYOffset > sticky) {
+    headertwo.classList.add("sticky");
+    for (var i = 0; i < mainElements.length; i++) {
+      mainElements[i].classList.add("main-follow"); // Add the class when sticky is added
+    }
+  } else {
+    headertwo.classList.remove("sticky");
+    for (var i = 0; i < mainElements.length; i++) {
+      mainElements[i].classList.remove("main-follow"); // Remove the class when sticky is removed
+    }
+  }
+}
+
+function copyToClipboard(text) {
+  var input = document.createElement('textarea');
+  input.value = decodeURIComponent(text);
+  document.body.appendChild(input);
+  input.select();
+  document.execCommand('copy');
+  document.body.removeChild(input);
+  alert('URL copiée dans le presse-papiers');
+}
+
+window.onscroll = function () { headerFixed() };
+
+//Dropdown-engagements
+// Sélectionne tous les éléments dropdown dans chaque section
+const dropdownsSection1 = document.querySelectorAll('#engagements-environnementaux .dropdown-element');
+const dropdownsSection2 = document.querySelectorAll('#engagements-societaux .dropdown-element');
+const dropdownsSection3 = document.querySelectorAll('#modal-lad .dropdown-element');
+
+// Fonction pour gérer l'activation/désactivation des dropdowns dans une section
+const handleDropdowns = (dropdowns) => {
+  dropdowns.forEach(dropdown => {
+    dropdown.addEventListener('click', () => {
+      // Désactive tous les dropdowns de la section
+      dropdowns.forEach(drop => drop.classList.remove('dropdown-element-active'));
+
+      // Active le dropdown cliqué
+      dropdown.classList.add('dropdown-element-active');
+    });
+  });
+};
+
+// Active la gestion des dropdowns pour chaque section
+handleDropdowns(dropdownsSection1);
+handleDropdowns(dropdownsSection2);
+handleDropdowns(dropdownsSection3);
+
+// Modal Fiche Métier
+document.addEventListener('DOMContentLoaded', function () {
+  var links = document.querySelectorAll('.link');
+
+  links.forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      var targetModalId = this.getAttribute('data-attribute');
+      var allModals = document.querySelectorAll('section[id^="modal-"]');
+
+      // Enlever la classe 'active' de tous les liens et modals
+      links.forEach(function (link) {
+        link.classList.remove('active');
+      });
+
+      allModals.forEach(function (modal) {
+        modal.classList.remove('active');
+      });
+
+      // Ajouter la classe 'active' au lien cliqué
+      this.classList.add('active');
+
+      // Mettre à jour le localStorage avec l'identifiant du modal ouvert
+      localStorage.setItem('activeModal', targetModalId);
+
+      var targetModal = document.querySelector('#' + targetModalId);
+      if (targetModal) {
+        targetModal.classList.add('active');
+      }
+    });
+  });
+
+  // Vérifier s'il existe un modal actif dans le localStorage et l'ouvrir
+  var activeModalId = localStorage.getItem('activeModal');
+  if (activeModalId) {
+    var activeModal = document.querySelector('#' + activeModalId);
+    if (activeModal) {
+      activeModal.classList.add('active');
+
+      // Ajouter la classe 'active' au lien correspondant
+      var activeLink = document.querySelector('a.link[data-attribute="' + activeModalId + '"]');
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
+    }
+  }
+
+  // Page Filière + Modal associé
+  var filiereLinks = document.querySelectorAll('.filiere-link');
+
+  filiereLinks.forEach(function (link) {
+    link.addEventListener('click', function (event) {
+      var activeModal = this.getAttribute('data-attribute');
+
+      // Stockage de la data-attribute dans le local storage
+      localStorage.setItem('activeModal', activeModal);
+
+      // Redirection vers la page 'metiers'
+      window.location.href = 'metiers';
+    });
+  });
+
+  // Vérification si la data-attribute est stockée dans le local storage
+  var activeModal = localStorage.getItem('activeModal');
+  if (activeModal) {
+    // Vous pouvez implémenter votre propre logique pour ouvrir la modal ici
+    // Par exemple, en ajoutant une classe 'active' à l'élément correspondant à l'identifiant du modal et en affichant ce modal avec CSS
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Récupération de tous les éléments avec la classe "element-video"
+  var elements = document.querySelectorAll(".element-video");
+
+  // Ajout d'un écouteur d'événement à chaque élément
+  elements.forEach(function (element) {
+    element.addEventListener("click", function () {
+      // Récupération de la valeur de l'attribut "data-attribut"
+      var attribut = element.getAttribute("data-attribut");
+
+      // Récupération de l'URL de la vidéo en fonction de l'attribut
+      var videoURL = "";
+      switch (attribut) {
+        case "alice":
+          videoURL = "https://www.youtube.com/embed/3ccXWvcLfSk?si=h1OOEnDSaP-b9zD1";
+          break;
+        case "marie-sophie":
+          videoURL = "https://www.youtube.com/embed/tHJmGlNvOSs?si=yCzpd8VrxoY5y8Hw";
+          break;
+        case "taoues":
+          videoURL = "https://www.youtube.com/embed/INk_wEXi4Xw?si=tvloOnVIOtxM8urj";
+          break;
+        case "constant":
+          videoURL = "https://www.youtube.com/embed/WTMtOzGReiE?si=OMgrYCHz9T6cwKI6";
+          break;
+        case "dalal":
+          videoURL = "https://www.youtube.com/embed/ANF_TSWjVxQ?si=ua7F7Ntl48FDipof";
+          break;
+        case "agladice":
+          videoURL = "https://youtube.com/embed/_QehesCRXnY?feature=shared";
+          break;
+        case "rodrigue":
+          videoURL = "https://www.youtube.com/embed/sgUyxCvihBE?si=rpdj0VCQkt1n-RcI";
+          break;
+        case "nicolas":
+          videoURL = "https://www.youtube.com/embed/pG7kQm0sC6Y?si=h7iizlyHuKIiPvkT";
+          break;
+        case "kim":
+          videoURL = "https://www.youtube.com/embed/dsxsAM0Hjwo?si=q2549q3_tA0i6B6q";
+          break;
+          
+        default:
+          videoURL = "";
+          break;
+      }
+
+      // Ouverture de la fenêtre modale avec l'iframe YouTube
+      if (videoURL !== "") {
+        openModal(videoURL);
+      }
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    var modalContainer = document.getElementById("modal-container-video");
+    if (event.target == modalContainer) {
+      closeModal();
+    }
+  });
+});
+
+// Fonction pour ouvrir la fenêtre modale avec l'iframe YouTube
+function openModal(videoURL) {
+  var iframeContainer = document.getElementById("iframe-container");
+  iframeContainer.innerHTML = '<iframe id="youtube-player" src="' + videoURL + '&enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>';
+
+  var modalContainer = document.getElementById("modal-container-video");
+  modalContainer.style.display = "flex";
+
+  player = new YT.Player("youtube-player");
+}
+
+// Fonction pour fermer la fenêtre modale
+function closeModal() {
+  var modalContainer = document.getElementById("modal-container-video");
+  modalContainer.style.display = "none";
+
+  player.pauseVideo();
+}

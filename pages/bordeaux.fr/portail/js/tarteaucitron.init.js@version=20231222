@@ -1,0 +1,21 @@
+window.tarteaucitronExpireInDay = true;
+window.tarteaucitronForceExpire = 183;
+
+tarteaucitron.init({
+	"orientation" : "bottom", /* Banner position (top - middle - bottom) */
+	"showIcon" : false, /* Remove the icon manager */
+	"removeCredit" : true, /* Remove credit link */
+	"moreInfoLink": true, /* Remove more info link */
+	"DenyAllCta": true, /* Remove deny all button */
+});
+
+(tarteaucitron.job = tarteaucitron.job || []).push('dailymotionplayerbdxfr');
+(tarteaucitron.job = tarteaucitron.job || []).push('dailymotionjukebox');
+(tarteaucitron.job = tarteaucitron.job || []).push('calameo');
+(tarteaucitron.job = tarteaucitron.job || []).push('lightwidget');
+(tarteaucitron.job = tarteaucitron.job || []).push('viewsurf');
+(tarteaucitron.job = tarteaucitron.job || []).push('facebookvideoplayer');
+(tarteaucitron.job = tarteaucitron.job || []).push('youtube');
+(tarteaucitron.job = tarteaucitron.job || []).push('youtubeplaylist');
+(tarteaucitron.job = tarteaucitron.job || []).push('vimeo');
+(tarteaucitron.job = tarteaucitron.job || []).push('soundcloud');
