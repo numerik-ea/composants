@@ -1,0 +1,26 @@
+/* 
+    Document   : atome-geolocation
+    Created on : 22 oct. 2013, 15:08:56
+    Author     : SI043332
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.iw-agency {
+    width: 200px;
+}
+.widget-map .iw-agency {
+    width: 200px;
+}
+.iw-agency h2 {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.iw-agency h2 a {
+    color: #2175D9;
+    text-decoration: none;
+}
+#map_my_agencies img {
+    max-width: none;
+}

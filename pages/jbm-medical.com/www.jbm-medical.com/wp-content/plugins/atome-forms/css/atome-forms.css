@@ -1,0 +1,68 @@
+/* 
+    Document   : atome-forms
+    Created on : 22 oct. 2013, 15:08:56
+    Author     : Laetitia Gaspari
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*form input, form select, form textarea {
+    border: 1px solid #CCCCCC;
+    display: block;
+    font-size: 14px;
+    line-height: 28px;
+    margin: 0 0 10px;
+    padding: 0 10px;
+    width: 298px;
+}*/
+
+/* AUTOCOMPLETE */
+.autocomplete-suggestions { 
+    max-height:300px;
+    border: 1px solid #2175d9; 
+    background: #fff; 
+    cursor: default; 
+    overflow: auto;;
+    z-index:10000;
+}
+
+.autocomplete-suggestion { 
+    padding: 3px 10px; 
+    font-size: 13px; 
+    overflow: hidden;
+}
+.autocomplete-suggestion:empty {
+    padding: 0;
+}
+.autocomplete-suggestion:nth-child(odd) { 
+    background: #f4f4f4; 
+}
+.autocomplete-suggestion a {
+    padding: 10px 10px !important;
+    color: #333;
+    width:312px !important
+}
+.autocomplete-suggestion.selected a{
+    color: #fff !important;
+}
+.autocomplete-suggestion.selected {
+    color: #fff !important; 
+    background: #2175d9 !important;
+}
+.autocomplete-suggestion .ui-state-focus .search {
+    color: #fff;
+}
+.autocomplete-suggestions .search{ 
+    font-weight: normal;
+    color: #2175d9;
+}
+
+input.ui-autocomplete-loading {
+    background: #fff url("../img/js-loader-small.gif") no-repeat 98% 50% !important;
+}
+input#id_locations_api.ui-autocomplete-loading,input#id_qualifications_api.ui-autocomplete-loading {
+    background-image: url("../img/js-loader.gif") !important;
+}
+
+
+

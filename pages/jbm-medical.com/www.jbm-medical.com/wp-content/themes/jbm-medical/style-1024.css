@@ -1,0 +1,219 @@
+/* 1024 */
+@media only screen and (max-width: 1235px) {
+	body{border-top:1px solid #ff6600;}
+	.wrapper {width:954px;}
+	.gpak {margin:0 0 30px -30px;}
+	.gp {margin-left:30px;}
+	.gp-1 {width:52px;}
+	.gp-2 {width:134px;}
+	.gp-3 {width:216px;}
+	.gp-4 {width:298px;}
+	.gp-4half {width:339px;}
+	.gp-5 {width:380px;}
+	.gp-6 {width:462px;}
+	.gp-7 {width:544px;}
+	.gp-8 {width:626px;}
+	.gp-9 {width:708px;}
+	.gp-10 {width:790px;}
+	.gp-11 {width:872px;}
+	.gp-12 {width:954px;}
+
+	/* PADDING LEFT + RIGHT */
+	.widget-links,
+	.widget-why-randstad,
+	.widget-poll,
+	.widget-agency,
+	.widget-img-txt2,
+	.box-alert,
+	.box-message,
+	.widget-eu
+	.widget-last-offers,
+	.widget-last-offers-consulted,
+	.widget-img-txt .c,
+	.filters,
+	.offers-search,
+	.agency-search,
+	.search-seo,
+	.no-result .c,
+	.apply-title,
+	.sign-in-box,
+	.candidate,
+	.form-account-cv .c,
+	.candidate-cv form,
+	.candidate-cv .cloud,
+	.form-account-cv .form-upload-cv,
+	.form-account-cv .cloud,
+	.form-fill-cv fieldset,
+	.form-retrieve-password,
+	.apply-confirmation,
+	.homepage .widget,
+	.faq-access .c,
+	.entry-list .item,
+	.widget-share-blog,
+	.blog-list .item.push,
+	.widget-related-posts,
+	.widget-last-offers .a,
+	.widget-quick-access,
+	.widget-contact-address,
+	.portal-access,
+	.widget-agency-clients,
+	.widget-need,
+	.widget-solutions{
+		padding-left:20px;
+		padding-right:20px;
+	}
+	.widget-last-offers .a{margin-left:-20px;}
+	.widget-last-offers-consulted{padding-right:20px!important;}
+	.widget-agency .v,
+	.widget-360 .v,
+	.widget-360-full .h,
+	.portal-access .v,
+	.widget-need .v{margin:-20px -20px 20px -20px;}
+	.widget-agency input,
+	.widget-agency select{width: 234px;}
+	.widget-agency select{width: 256px;}
+	.widget-offer-agency .a{padding:15px 20px;}
+	.widget-contact-address .gmap-simple{margin:20px -20px -20px -20px;}
+	.widget-news{
+		padding-left:20px;
+		padding-right:0;
+	}
+	.widget-news ul{height:192px;}
+	.widget-news p{
+		padding:15px 20px 0 20px;
+		margin:0 0 0 -20px;
+	}
+	.homepage .widget-last-offers{margin-bottom:30px;}
+	.widget-last-offers .t{padding-right:20px;}
+	.homepage .widget-last-offers li h2{width:269px;}
+	.widget-quick-access h3{
+		font-size:18px;
+		padding-right:70px;
+	}
+	.widget-quick-access img{margin-right:-15px;}
+
+	/* HEADER */
+	.site-search header .header-1 .logo{width:284px;}
+	.subnav a {font-size: 12px;}
+	.nav em{display:none;}
+	/* TABS */
+	.slider-container{margin-bottom:30px;}
+	.slider-container .slider .item img{display:none;}
+	/* SEARCH ENGINE */
+	.home-search-engine img{width:525px;}
+	.home-search-engine-clients img{width:488px;}
+	.search-engine{width:626px;}
+	.search-engine-1{padding:20px;}
+	.search-engine h1{font-size:23px;}
+	.search-engine form input{width:185px;}
+	.search-engine form select{width:208px;}
+	.search-engine .select-js-container{width:206px;}
+	.offers-search input,
+	.agency-search input{width:236px;}
+
+	.no-result .c p{width:56%;}
+	/* OFFERS */
+	.a-save-search,
+	.bt-saved-searches{
+		margin-left:-20px;
+		margin-right:-20px;
+	}
+	.form-fill-cv .row .col {width: 231px;}
+	.form-fill-cv .row .col-full{width:auto;}
+	.form-fill-cv input {width: 209px;}
+	.form-fill-cv select {width: 231px;}
+	.form-fill-cv .col-full textarea{width:480px;}
+	.gp-8 .form-fill-cv .col-full textarea{width:562px;}
+
+	.header-cv{
+		background-position:20px 18px;
+		padding-left:90px;
+		padding-right:20px;
+	}
+
+	/* APPLY */
+	.apply li.or{
+		clear:both;
+		display:block;
+		padding:0;
+		line-height:38px;
+		margin:-20px 0 0 0;
+	}
+	.apply li.first-social{
+		clear:both;
+		margin:0;
+	}
+	.apply li.li-cv .c{padding:20px;}
+
+	/* AGENCIES */
+	.map-search{padding:15px 10px;}
+	.frm-itinary-1,
+	.frm-itinary-2{margin:0 10px 0 0;}
+	.frm-itinary,
+	.agency-last-offers .create-alert-box,
+	.agency-last-offers .c,
+	.agency-last-offers .all{padding:19px;}
+	.agency-labels p{padding-top:0;}
+
+	/* ACCOUNT */
+	.home-account .items{margin:0 0 0 -30px;}
+	.home-account .item{
+		width:298px;
+		margin:0 0 30px 30px;
+	}
+
+	/* CANDIDATE */
+	.home-candidate .form-login input{width:263px;}
+	.home-candidate .access{background-position:97% 90px;}
+	.home-candidate-1 .benefits{
+		background:none;
+		padding-right:25px;
+	}
+	/* FOOTER */
+	.footer-1 h3{font-size:14px;}
+	.footer-1 a{font-size:12px;}
+	.footer .footer-1 .col-5 li{width:27px;}
+
+	/* OFFERS LIST */
+	.offers-list{margin-left:-30px;}
+	.offers-col-results .offers-list,
+	.col-selection-1 .offers-list{margin-left:-20px;}
+	.offers-col-results .offers-list li,
+	.col-selection-1 .offers-list li{
+		width:303px;
+		margin:0 0 20px 20px;
+	}
+	.offers-list .c{
+		min-height:272px;
+		padding:20px;
+	}
+	.offers-list-clients .c{min-height:175px;}
+	.offers-list .a{padding:13px 20px;}
+	.offers-list-inline .a p{padding-left:10px;}
+
+	.related-offers li,
+	.col-account-1 .offers-list li{
+		width:298px;
+		margin-left:30px;
+	}
+	.col-account-searches .item .c{width:40%;}
+	.offers-list .a .a-add-to-selection,
+	.offers-list-inline .a .a-add-to-selection{margin-left:8px;}
+
+	/* ERROR 404 */
+	.error-404{margin-bottom:0;}
+
+	/* HOMEPAGE */
+	.homepage{margin-bottom:0;}
+	.homepage-clients{margin-bottom:30px;}
+	.homepage .col-homepage-2 .widget:first-child{margin-bottom:30px;}
+	.homepage .widget-facebook{padding:0;}
+	.homepage .widget-agency-home input{width:234px;}
+	.widget-agency-home .v{width:254px;}
+	.widget-agency-home .v img{/*margin-left:-96px;*/}
+	.header-article .a-send span{display:none;}
+	.homepage .widget-360-full{
+		min-height:367px;
+		margin-bottom:30px;
+	}
+}

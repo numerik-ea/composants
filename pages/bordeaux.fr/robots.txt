@@ -1,0 +1,23 @@
+User-agent: *
+# Ancienne URL "longues"
+Disallow:/*pgAgdContrib.psml
+Disallow:/*pgCRCM.psml
+Disallow:/*pgCVEluCM.psml
+Disallow:/*pgFAQ.psml
+Disallow:/*pgDossier1.psml
+Disallow:/*pgFicheEvt.psml
+Disallow:/*pgFicheLieu.psml
+Disallow:/*pgFicheOrga.psml
+Disallow:/*pgPresStand8.psml
+Disallow:/*pgSpecifiqueService.psml
+Disallow:/*pgTouteActualite.psml
+Disallow:/*?iEvt=
+Disallow:/ebx/LinkResolverServlet?classofcontent=
+Disallow:/*/undefined
+Disallow:/*pgSomAgd.psml
+Disallow:/m*?whichPage=1
+Disallow:/*&src=sp
+Disallow:/o*&back=1
+Disallow:/l*&back=1
+
+Sitemap: https://www.bordeaux.fr/sitemap.xml

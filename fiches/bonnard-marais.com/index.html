@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Carrousel du restaurant Bonnard | composants</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Carrousel du restaurant Bonnard" />
+<meta property="og:locale" content="en_US" />
+<link rel="canonical" href="http://localhost:4000/fiches/bonnard-marais.com/" />
+<meta property="og:url" content="http://localhost:4000/fiches/bonnard-marais.com/" />
+<meta property="og:site_name" content="composants" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Carrousel du restaurant Bonnard" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","headline":"Carrousel du restaurant Bonnard","url":"http://localhost:4000/fiches/bonnard-marais.com/"}</script>
+<!-- End Jekyll SEO tag -->
+
+    <link rel="stylesheet" href="/assets/css/style.css?v=de7683a2c0969c7f50d16012423cfbafd69972ec">
+    <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
+
+<!-- Setup Google Analytics -->
+
+
+
+<!-- You can set your favicon here -->
+<!-- link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" -->
+
+<!-- end custom head snippets -->
+
+  </head>
+  <body>
+    <div class="container-lg px-3 my-5 markdown-body">
+      
+      <h1><a href="http://localhost:4000/">composants</a></h1>
+      
+
+      <h1 id="carrousel-du-restaurant-bonnard">Carrousel du restaurant Bonnard</h1>
+
+<p><img src="/fiches/bonnard-marais.com/carrousel.png" alt="Carrousel du restaurant Bonnard" /></p>
+
+<h2 id="carrousel--alternatives-des-images">Carrousel &gt; Alternatives des images</h2>
+
+<p><strong>Problème</strong></p>
+
+<ul>
+  <li><strong>1.1 :</strong> Absence d’alternative textuelle pour les images au sein du carrousel, regroupées au sein de <code class="language-plaintext highlighter-rouge">role="group"</code></li>
+</ul>
+
+<p><strong>Solution</strong></p>
+
+<ul>
+  <li>Ajouter, en tant que valeur dans l’attribut alt sur <code class="language-plaintext highlighter-rouge">&lt;img&gt;</code>, des alternatives pertinentes pour chaque image porteuse d’information ex: <code class="language-plaintext highlighter-rouge">"Photo XX"</code>, où <code class="language-plaintext highlighter-rouge">XX</code> reprend quelques termes pour expliquer l’info dans la photo : <code class="language-plaintext highlighter-rouge">alt="Photo risotto à la truffe"</code></li>
+</ul>
+
+<h2 id="carrousel--navigation">Carrousel &gt; Navigation</h2>
+
+<p><strong>Problème</strong></p>
+
+<ul>
+  <li>
+    <p><strong>13.10 :</strong> Présence d’une fonctionnalité utilisable seulement au moyen d’un geste complexe : navigation possible dans le carrousel uniquement avec un swipe (déplacement avec la souris sur les contenus)</p>
+  </li>
+  <li>
+    <p><strong>13.8 :</strong> Présence d’un contenu en mouvement qui n’est pas contrôlable par l’utilisateur : Les images du carrousel défile automatiquement.</p>
+  </li>
+</ul>
+
+<p><strong>Solution</strong></p>
+
+<ul>
+  <li>S’assurer de bien pouvoir naviguer dans le carrousel avec un geste simple (Un geste simple implique un contact en un point unique de l’écran).<br />
+Proposition de correction avec des boutons “Suivant” et “Précédent” :
+    <ul>
+      <li>
+        <p>Ajouter des éléments <code class="language-plaintext highlighter-rouge">&lt;button type="button"&gt;</code> permettant de naviguer dans le carrousel positionnés après les images du carrousel</p>
+      </li>
+      <li>
+        <p>Les photos du carrousel non visible ou partiellement visible ont un attribut <code class="language-plaintext highlighter-rouge">aria-hidden="true"</code> positionné sur l’élément parent <code class="language-plaintext highlighter-rouge">&lt;div role="group" aria-label="X/Y"&gt;</code></p>
+      </li>
+      <li>
+        <p>Ces boutons de navigation doivent avoir un intitulé pertinent du type <code class="language-plaintext highlighter-rouge">"Photo suivante"</code> / <code class="language-plaintext highlighter-rouge">"Photo précédente"</code></p>
+        <ul>
+          <li>Si vous souhaitez utiliser seulement une icône visible pour les boutons (ex : flèches droite / gauche), alors :
+            <ul>
+              <li>ajouter les intitulés <code class="language-plaintext highlighter-rouge">"Photo suivante / précédente"</code> au sein d’un élément <code class="language-plaintext highlighter-rouge">&lt;span&gt;</code> visuellement masqué (ex : <code class="language-plaintext highlighter-rouge">sr-only</code>)</li>
+              <li>Masquer l’icône avec un attribut <code class="language-plaintext highlighter-rouge">aria-hidden="true"</code></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+    <div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="nt">&lt;button</span> <span class="na">type=</span><span class="s">"button"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;svg</span> <span class="na">aria-hidden=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+          <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"sr-only"</span><span class="nt">&gt;</span>Photo suivante<span class="nt">&lt;/span&gt;</span>
+      <span class="nt">&lt;/button&gt;</span>
+</code></pre></div>    </div>
+    <ul>
+      <li>
+        <p>Lors de l’activation d’un bouton de navigation :</p>
+
+        <ul>
+          <li>
+            <p>afficher visuellement la ou les nouvelle.s photo.s</p>
+          </li>
+          <li>
+            <p>positionner le focus sur la première nouvelle photo rendu visible, en ajoutant, préalablement, un attribut <code class="language-plaintext highlighter-rouge">tabindex="-1"</code> sur la <code class="language-plaintext highlighter-rouge">&lt;div role="group" aria-label="X/Y"&gt;</code> et en y positionnant le focus via JavaScript</p>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Concernant le mouvement automatique :</strong>
+    <ul>
+      <li>
+        <p>Nous vous préconisons de ne pas faire défiler le carrousel automatiquement, mais uniquement via les boutons de navigation</p>
+      </li>
+      <li>
+        <p><strong>Soit</strong> ajouter un bouton <code class="language-plaintext highlighter-rouge">&lt;button type="button"&gt;</code> qui permet de faire pause/lecture sur le contenu, positionné avant le carrousel</p>
+        <ul>
+          <li>L’élément a un intitulé pertinent du type <code class="language-plaintext highlighter-rouge">"Mettre le carousel en pause"</code> / <code class="language-plaintext highlighter-rouge">"Relancer l'animation automatique du carrousel"</code></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<p><strong>Remarque :</strong> Veillez à bien vérifier que tous les boutons fonctionnent au clavier, les rendre activables avec les touches <code class="language-plaintext highlighter-rouge">Entrée</code> et <code class="language-plaintext highlighter-rouge">Espace</code> et s’assurer de la bonne visibilité du focus clavier et de donner des intitulés pertinents aux boutons.</p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>

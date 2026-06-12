@@ -1,0 +1,141 @@
+
+/* POPIN CHATBOT */
+.popin-launch-chatbot {
+  display: none;
+  position: fixed;
+  width: 300px;
+  height: 316px;
+  bottom: 3px;
+  right: 3px;
+  z-index: 200000000;
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-moz-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-ms-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@-o-keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.popin-launch-chatbot .st0 {
+  -webkit-animation: blink 1s infinite linear;
+  animation: blink 1s infinite linear;
+}
+
+/* WIDGET CHATBOT */
+.widget-chatbot{
+	border:none!important;
+	padding:30px!important;
+	background:#0f1941;
+	overflow:hidden;
+}
+.widget-chatbot h2{
+  font-size:36px;
+  color:#fff;
+  margin-bottom:30px;
+}
+.widget-chatbot .v{
+  width:140px;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:30px;
+}
+.widget-chatbot .c{
+  overflow:hidden;
+}
+.widget-chatbot p{
+  font-size:20px;
+  line-height:1.5;
+  color:#fff;
+  margin-bottom:20px;
+}
+.widget-chatbot p span{
+  color:#ffb511;
+}
+.widget-chatbot .bt {
+	display:inline-block;
+	text-align:center;
+	text-decoration:none;
+	border-radius:3px;
+	-webkit-transform:translateZ(0);
+	/* BUG CHROME */
+	-webkit-transition:all 0.3s ease;
+	-moz-transition:all 0.3s ease;
+	-ms-transition:all 0.3s ease;
+	-o-transition:all 0.3s ease;
+	transition:all 0.3s ease;
+	line-height:50px;
+	height:50px;
+	font-size:16px;
+	color:#fff;
+	border-color:#fff;
+	border-width:1px;
+	border-style:solid;
+	padding:0 20px;
+}
+.widget-chatbot .bt:hover{
+	background:#fff;
+	color:#2175d9;
+}
+@media only screen and (min-width: 479px) {
+	.widget-chatbot .v{
+		float:left;
+		margin-left:0;
+		margin-right:30px;
+		margin-bottom:0;
+	}
+}
+@media only screen and (min-width: 767px) {
+	.widget-chatbot .bt{
+		line-height:58px;
+		height:58px;
+		border-width:2px;
+	}
+}
+@media only screen and (min-width: 1023px) {
+	.widget-chatbot .v{
+		float:none;
+		margin:0 auto 30px auto;
+	}
+}
+@media only screen and (min-width: 1236px) {
+	.widget-chatbot .v{
+		float:left;
+		width:130px;
+		margin-left:-70px;
+		margin-right:30px;
+		margin-bottom:0;
+	}
+}

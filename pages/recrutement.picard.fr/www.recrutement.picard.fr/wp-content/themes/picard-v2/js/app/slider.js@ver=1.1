@@ -1,0 +1,25 @@
+//Swiper
+const swiper = new Swiper(".mySwiper", {
+    slidesPerView: 4,
+    spaceBetween: 24,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    //Responsive
+    breakpoints: {
+      1400: {
+        slidesPerView: 4,
+      },
+      1100: {
+        slidesPerView: 3,
+      },
+      320: {
+        slidesPerView: 1,
+      }
+    }
+  });

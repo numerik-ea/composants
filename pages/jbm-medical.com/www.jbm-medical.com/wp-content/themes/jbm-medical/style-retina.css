@@ -1,0 +1,555 @@
+/* RETINA */
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-device-pixel-ratio: 2), only screen and (min-resolution: 2dppx) {
+	.rte .mea{
+		background-image:url(img/picto-mea-kf@x2.png);
+		-webkit-background-size:28px;
+		-moz-background-size:28px;
+		background-size:28px;
+	}
+	.rte .mea-focus{background-image:url(img/picto-mea-flag@x2.png);}
+	.rte .mea-plus{background-image:url(img/picto-mea-plus@x2.png);}
+	.rte .mea-citation{background-image:url(img/picto-mea-quote@x2.png);}
+	.box-alert h2{
+		background-image:url(img/picto-error@x2.png);
+		-webkit-background-size:20px;
+		-moz-background-size:20px;
+		background-size:20px;
+	}
+	.bt-blue,
+	.bt-orange,
+	.no-result .c-2 a,
+	.a-send-selection,
+	.a-create-alert{
+		background-image:url(img/chevron@x2.png);
+		-webkit-background-size:22px;
+		-moz-background-size:22px;
+		background-size:22px;
+	}
+	.bt-orange2 {
+		background-image:url(img/chevron2@x2.png);
+		-webkit-background-size:29px;
+		-moz-background-size:29px;
+		background-size:29px;
+	}
+	.menu-site li a.active{
+		background-image:url(img/arrow-menu-site@x2.png);
+		-webkit-background-size:19px;
+		-moz-background-size:19px;
+		background-size:19px;
+	}
+	.a-save-search{
+		background-image:url(https://www.jbm-medical.com/wp-content/themes/jbm-medical/img/picto-save-search@x2.png);
+		-webkit-background-size:24px;
+		-moz-background-size:24px;
+		background-size:24px;
+	}
+	.bt-saved-searches{
+		background-image:url(https://www.jbm-medical.com/wp-content/themes/jbm-medical/img/picto-saved-searches@x2.png);
+		-webkit-background-size:24px;
+		-moz-background-size:24px;
+		background-size:24px;
+	}
+	.apply li.li-cv-active{
+		background-image:url(img/arrow-cv@x2.png);
+		-webkit-background-size:19px;
+		-moz-background-size:19px;
+		background-size:19px;
+	}
+	.slider-container .previous{
+		background-image:url(img/slider-previous@x2.png);
+		-webkit-background-size:8px;
+		-moz-background-size:8px;
+		background-size:8px;
+	}
+	.slider-container .next{
+		background-image:url(img/slider-next@x2.png);
+		-webkit-background-size:8px;
+		-moz-background-size:8px;
+		background-size:8px;
+	}
+	.back a,
+	.nav-detail .pn .previous,
+	.nav-detail-bt .pn .previous span,
+	.pagination-1 a.previous span{
+		background-image:url(img/chevron7@x2.png);
+		-webkit-background-size:5px;
+		-moz-background-size:5px;
+		background-size:5px;
+	}
+	.popin button.close{
+		background-image:url(img/picto-close@x2.png);
+		-webkit-background-size:18px;
+		-moz-background-size:18px;
+		background-size:18px;
+	}
+	.pp-login-required .alert,
+	.account-title-profile{
+		background-image:url(img/picto-account2@x2.png);
+		-webkit-background-size:23px;
+		-moz-background-size:23px;
+		background-size:23px;
+	}
+	.account-title-alert,
+	.home-account .item-alert h3{
+		background-image:url(img/picto-alert@x2.png);
+		-webkit-background-size:41px;
+		-moz-background-size:41px;
+		background-size:41px;
+	}
+	.account-title-cv,
+	.home-account .item-cv h3{
+		background-image:url(img/picto-cv2@x2.png);
+		-webkit-background-size:27px;
+		-moz-background-size:27px;
+		background-size:27px;
+	}
+	.home-account .item-cv .d{
+		background-image:url(img/picto-cv3@x2.png);
+		-webkit-background-size:65px;
+		-moz-background-size:65px;
+		background-size:65px;
+	}
+	.account-title-selection,
+	.home-account .item-selection h3{
+		background-image:url(img/picto-selection2@x2.png);
+		-webkit-background-size:30px;
+		-moz-background-size:30px;
+		background-size:30px;
+	}
+	.account-menu .t h1,
+	.candidate-title,
+	.create-account-title h1{
+		background-image:url(img/picto-account5@x2.png);
+		-webkit-background-size:29px;
+		-moz-background-size:29px;
+		background-size:29px;
+	}
+	.col-account-alert .item .c{
+		background-image:url(img/picto-alert2@x2.png);
+		-webkit-background-size:52px;
+		-moz-background-size:52px;
+		background-size:52px;
+	}
+	.agency-last-offers .create-alert-box h4{
+		background-image:url(img/picto-alert5@x2.png);
+		-webkit-background-size:52px;
+		-moz-background-size:52px;
+		background-size:52px;
+	}
+	.pp-login-required-2 li.d1{
+		background-image:url(img/picto-benefit1@x2.png);
+		-webkit-background-size:24px;
+		-moz-background-size:24px;
+		background-size:24px;
+	}
+	.pp-login-required-2 li.d2{
+		background-image:url(img/picto-benefit2@x2.png);
+		-webkit-background-size:24px;
+		-moz-background-size:24px;
+		background-size:24px;
+	}
+	.pp-login-required-2 li.d3{
+		background-image:url(img/picto-benefit3@x2.png);
+		-webkit-background-size:24px;
+		-moz-background-size:24px;
+		background-size:24px;
+	}
+	.pp-login-required-2 li.d4{
+		background-image:url(img/picto-benefit4@x2.png);
+		-webkit-background-size:25px;
+		-moz-background-size:25px;
+		background-size:25px;
+	}
+	/* HEADER */
+	.main-menu .nav .sub-menu a,
+	.menu-account ul a,
+	.subnav-left ul a,
+	.widget-last-offers li,
+	.nav-detail .pn .next,
+	.rte-more, .bt-more,
+	.nav-detail-bt .pn .next span,
+	.pagination-1 a.next span,
+	.related-news li{
+		background-image:url(img/chevron6@x2.png);
+		-webkit-background-size:5px;
+		-moz-background-size:5px;
+		background-size:5px;
+	}
+	.subnav-left ul a.active{
+		background-image:url(img/chevron9@x2.png);
+		-webkit-background-size:5px;
+		-moz-background-size:5px;
+		background-size:5px;
+	}
+	.a-mobile-smenu span,
+	.select-js-container .placeholder{
+		background-image:url(img/select@x2.png);
+		-webkit-background-size:9px;
+		-moz-background-size:9px;
+		background-size:9px;
+	}
+	.menu-account ul li.logout a{
+		background-image:url(img/picto-logout@x2.png);
+		-webkit-background-size:8px;
+		-moz-background-size:8px;
+		background-size:8px;
+	}
+	.a-selection,
+	.a-add-to-selection{
+		background-image:url(img/picto-selection3@x2.png);
+		-webkit-background-size:21px;
+		-moz-background-size:21px;
+		background-size:21px;
+	}
+	.a-selection-clients{
+		background-image:url(img/picto-selection4@x2.png);
+		-webkit-background-size:21px;
+		-moz-background-size:21px;
+		background-size:21px;
+	}
+	.a-account{
+		background-image:url(img/picto-account6@x2.png);
+		-webkit-background-size:10px;
+		-moz-background-size:10px;
+		background-size:10px;
+	}
+	.nav-detail-bt .pn .next:hover span,
+	.pagination-1 a.next:hover span{
+		background-image:url(https://www.jbm-medical.com/wp-content/themes/jbm-medical/img/puce-nav@x2.png);
+		-webkit-background-size:5px;
+		-moz-background-size:5px;
+		background-size:5px;
+	}
+	.selection-title .c a,
+	.offers-search ul li a,
+	.home-search-engine li a{
+		background-image:url(img/chevron5@x2.png);
+		-webkit-background-size:6px;
+		-moz-background-size:6px;
+		background-size:6px;
+	}
+	.offers-search ul li a.active{
+		background-image:url(https://www.jbm-medical.com/wp-content/themes/jbm-medical/img/arrow-search-offers3@x2.png);
+		-webkit-background-size:9px;
+		-moz-background-size:9px;
+		background-size:9px;
+	}
+	.offers-search ul li.item a,
+	.bt-more2{
+		background-image:url(img/chevron8@x2.png);
+		-webkit-background-size:6px;
+		-moz-background-size:6px;
+		background-size:6px;
+	}
+	.site-search .offers-search ul li.item a,
+	.site-search .bt-more2{
+		background-image:url(img/chevron16@x2.png);
+		-webkit-background-size:6px;
+		-moz-background-size:6px;
+		background-size:6px;
+	}
+	.a-mobile-menu{
+		background-image:url(img/picto-mobile-menu@x2.png);
+		-webkit-background-size:20px;
+		-moz-background-size:20px;
+		background-size:20px;
+	}
+	.sign-in-box span{
+		background-image:url(img/picto-account@x2.png);
+		-webkit-background-size:14px;
+		-moz-background-size:14px;
+		background-size:14px;
+	}
+	.account-menu li:first-child a {
+		background-image:url(img/picto-home@x2.png);
+		-webkit-background-size:13px;
+		-moz-background-size:13px;
+		background-size:13px;
+	}
+	.account-menu li:first-child a.active{
+		background-image:url(img/picto-home-active@x2.png);
+		-webkit-background-size:13px;
+		-moz-background-size:13px;
+		background-size:13px;
+	}
+	.offer-resume-simple h3,
+	.offer-resume-simple h2,
+	.account-title-apply,
+	.home-account .item-candidate h3{
+		background-image:url(img/picto-info@x2.png);
+		-webkit-background-size:24px;
+		-moz-background-size:24px;
+		background-size:24px;
+	}
+	.account-title-searches,
+	.home-account .item-search h3{
+		background-image:url(img/picto-searches@x2.png);
+		-webkit-background-size:33px;
+		-moz-background-size:33px;
+		background-size:33px;
+	}
+	.selection-title h1{
+		background-image:url(img/picto-selection@x2.png);
+		-webkit-background-size:37px;
+		-moz-background-size:37px;
+		background-size:37px;
+	}
+	.selection-title-clients h1{
+		background-image:url(img/picto-selection5@x2.png);
+		-webkit-background-size:38px;
+		-moz-background-size:38px;
+		background-size:38px;
+	}
+	.col-account-searches .item .c{
+		background-image:url(img/picto-searches2@x2.png);
+		-webkit-background-size:41px;
+		-moz-background-size:41px;
+		background-size:41px;
+	}
+	/* OFFERS */
+	.apply-title p{
+		background-image:url(img/picto-estimated-time@x2.png);
+		-webkit-background-size:37px;
+		-moz-background-size:37px;
+		background-size:37px;
+	}
+	.candidate-cv h4,
+	.candidate-cv .candidate-t p,
+	.header-cv,
+	.col-account-cv .item .c{
+		background-image:url(img/picto-cv@x2.png);
+		-webkit-background-size:52px;
+		-moz-background-size:52px;
+		background-size:52px;
+	}
+	.header-cv-facebook{
+		background-image:url(img/picto-facebook@x2.png);
+		-webkit-background-size:52px;
+		-moz-background-size:52px;
+		background-size:52px;
+	}
+	.header-cv-doyoubuzz{
+		background-image:url(img/picto-doyoubuzz@x2.png);
+		-webkit-background-size:52px;
+		-moz-background-size:52px;
+		background-size:52px;
+	}
+	.candidate-linkedin h4,
+	.header-cv-linkedin{
+		background-image:url(img/picto-linkedin@x2.png);
+		-webkit-background-size:52px;
+		-moz-background-size:52px;
+		background-size:52px;
+	}
+	.candidate-viadeo h4,
+	.header-cv-viadeo{
+		background-image:url(img/picto-viadeo@x2.png);
+		-webkit-background-size:52px;
+		-moz-background-size:52px;
+		background-size:52px;
+	}
+	.candidate-account h4{
+		background-image:url(img/picto-account3@x2.png);
+		-webkit-background-size:52px;
+		-moz-background-size:52px;
+		background-size:52px;
+	}
+	.widget-got-account h3{
+		background-image:url(img/picto-account4@x2.png);
+		-webkit-background-size:19px;
+		-moz-background-size:19px;
+		background-size:19px;
+	}
+	.header-cv .a-view-cv,
+	.col-account-cv .item .a-view-cv{
+		background-image:url(img/picto-view@x2.png);
+		-webkit-background-size:12px;
+		-moz-background-size:12px;
+		background-size:12px;
+	}
+	.header-cv .a-delete-cv,
+	.offers-list .a .a-delete-selection,
+	.col-account-alert .item .a-delete-alert,
+	.col-account-cv .item .a-delete-cv,
+	.col-account-searches .item .a-delete-search,
+	.delete-profile a{
+		background-image:url(img/picto-delete@x2.png);
+		-webkit-background-size:12px;
+		-moz-background-size:12px;
+		background-size:12px;
+	}
+	.col-account-alert .item .a-extend-alert{
+		background-image:url(img/picto-extend@x2.png);
+		-webkit-background-size:12px;
+		-moz-background-size:12px;
+		background-size:12px;
+	}
+	.col-account-searches .item .a li a.a-create-alert-from-search{
+		background-image:url(img/picto-alert4@x2.png);
+		-webkit-background-size:18px;
+		-moz-background-size:18px;
+		background-size:18px;
+	}
+	.how-to h2,
+	.widget-how-to h3{
+		background-image:url(img/picto-how-to@x2.png);
+		-webkit-background-size:17px;
+		-moz-background-size:17px;
+		background-size:17px;
+	}
+	.a-send-selection span{
+		background-image:url(img/picto-send-selection@x2.png);
+		-webkit-background-size:36px;
+		-moz-background-size:36px;
+		background-size:36px;
+	}
+	.a-create-alert span{
+		background-image:url(img/picto-alert3@x2.png);
+		-webkit-background-size:36px;
+		-moz-background-size:36px;
+		background-size:36px;
+	}
+	/* AGENCIES */
+	.widget-map a.bt{
+		background-image:url(img/map-widget-zoom@x2.png);
+		-webkit-background-size:20px;
+		-moz-background-size:20px;
+		background-size:20px;
+	}
+	.agency-sheet .title .a-define-agency{
+		background-image:url(img/picto-define-agency@x2.png);
+		-webkit-background-size:28px;
+		-moz-background-size:28px;
+		background-size:28px;
+	}
+	.agency-sheet .title .defined-agency,
+	.agency-sheet .title .defined-agency:hover{
+		background-image:url(img/picto-defined-agency@x2.png);
+		-webkit-background-size:28px;
+		-moz-background-size:28px;
+		background-size:28px;
+	}
+	.widget-offer-agency .c h3{
+		background-image:url(img/picto-agency@x2.png);
+		-webkit-background-size:19px;
+		-moz-background-size:19px;
+		background-size:19px;
+	}
+	.agency-sheet .info-1{
+		background-image:url(img/picto-adress@x2.png);
+		-webkit-background-size:17px;
+		-moz-background-size:17px;
+		background-size:17px;
+	}
+	.agency-sheet .info-2{
+		background-image:url(img/picto-email@x2.png);
+		-webkit-background-size:23px;
+		-moz-background-size:23px;
+		background-size:23px;
+	}
+	.map-list-top .bt{
+		background-image:url(img/map-zoomout@x2.png);
+		-webkit-background-size:20px;
+		-moz-background-size:20px;
+		background-size:20px;
+	}
+	.agency-last-offers h3,
+	.apply-title h1{
+		background-image:url(img/picto-last-offers@x2.png);
+		-webkit-background-size:32px;
+		-moz-background-size:32px;
+		background-size:32px;
+	}
+	.apply-title-clients h1{
+		background-image:url(img/picto-top-candidat@x2.png);
+		-webkit-background-size:32px;
+		-moz-background-size:32px;
+		background-size:32px;
+	}
+	.col-account-profile .c .t a{
+		background-image:url(img/picto-edit@x2.png);
+		-webkit-background-size:14px;
+		-moz-background-size:14px;
+		background-size:14px;
+	}
+	.offers-search button,
+	.widget-search-offers a{
+		background-image:url(img/bt-search2@x2.png);
+		-webkit-background-size:18px;
+		-moz-background-size:18px;
+		background-size:18px;
+	}
+	.bt-search{
+		background-image:url(img/bt-search@x2.png);
+		-webkit-background-size:29px;
+		-moz-background-size:29px;
+		background-size:29px;
+	}
+	.home-account .item h3 a{
+		background-image:url(img/chevron4@x2.png);
+		-webkit-background-size:8px;
+		-moz-background-size:8px;
+		background-size:8px;
+	}
+	.home-candidate .benefits li,
+	.widget-in-account li{
+		background-image:url(https://www.jbm-medical.com/wp-content/themes/jbm-medical/img/puce2@x2.png);
+		-webkit-background-size:14px;
+		-moz-background-size:14px;
+		background-size:14px;
+	}
+	.tools .a-send{
+		background-image:url(img/picto-send@x2.png);
+		-webkit-background-size:17px;
+		-moz-background-size:17px;
+		background-size:17px;
+	}
+	.tools .a-print{
+		background-image:url(img/picto-print@x2.png);
+		-webkit-background-size:17px;
+		-moz-background-size:17px;
+		background-size:17px;
+	}
+	.tools .a-pdf{
+		background-image:url(img/picto-download@x2.png);
+		-webkit-background-size:18px;
+		-moz-background-size:18px;
+		background-size:18px;
+	}
+	.faq-detail > h2,
+	.links-list > h2{
+		background-image:url(img/chevron13@x2.png);
+		-webkit-background-size:6px;
+		-moz-background-size:6px;
+		background-size:6px;
+	}
+	.faq-detail .question h3,
+	.enrollment-offers h2.action,
+	.news-list article{
+		background-image:url(img/chevron13@x2.png);
+		-webkit-background-size:6px;
+		-moz-background-size:6px;
+		background-size:6px;
+	}
+	.faq-detail .question h3.active,
+	.enrollment-offers h2.active,
+	.faq-detail > h2.active{
+		background-image:url(img/chevron14@x2.png);
+		-webkit-background-size:12px;
+		-moz-background-size:12px;
+		background-size:12px;
+	}
+	a.bt-close,
+	a.back-to-top{
+		background-image:url(img/chevron15@x2.png);
+		-webkit-background-size:9px;
+		-moz-background-size:9px;
+		background-size:9px;
+	}
+	.popin-cnil .close{
+		background-image:url(img/bt-close@x2.png);
+		-webkit-background-size:18px;
+		-moz-background-size:18px;
+		background-size:18px;
+	}
+}
