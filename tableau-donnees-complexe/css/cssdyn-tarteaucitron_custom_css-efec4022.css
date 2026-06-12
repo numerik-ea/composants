@@ -1,0 +1,37 @@
+/* #PRODUIRE{fond=tarteaucitron_custom.css}
+   md5:3c4de7ac652a63aa2c4af64334fb65c8 */
+#tarteaucitron strong { color: #ffffff; }
+#tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronName .tarteaucitron-toggle-group {
+	background: rgba(0, 0, 0, 0.1) !important;
+	padding: 11px 22px;
+	margin: 5px 0;
+	text-transform: uppercase;
+	position: relative;
+	border-radius: 3px;
+	box-shadow: 0 2px 1px rgba(0,0,0,0.1), 0 1px 3px rgba(0,0,0,0.3);
+}
+#tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronName .tarteaucitron-toggle-group:hover {
+	box-shadow: 0 2px 3px rgba(0,0,0,0.1), 0 4px 8px rgba(0,0,0,0.3);
+}
+#tarteaucitronRoot #tarteaucitronAlertBig {
+	background: #333!important;
+}
+#tarteaucitronAlertBig #tarteaucitronPersonalize2,
+.tarteaucitronCTAButton,
+#tarteaucitronRoot .tarteaucitronDeny,
+#tarteaucitronAlertBig #tarteaucitronDisclaimerAlert {
+	color: #fff!important;
+}
+#tarteaucitronRoot .tarteaucitronDeny,
+#tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronAsk .tarteaucitronDeny {
+    background: #1B870B!important;
+}
+#tarteaucitronAlertBig #tarteaucitronPersonalize2, .tarteaucitronCTAButton,
+#tarteaucitron #tarteaucitronServices .tarteaucitronLine .tarteaucitronAsk .tarteaucitronAllow {
+    background: #9C1A1A!important;
+}
+#tarteaucitronRoot .tarteaucitronAllow {
+	background: #008300!important;
+    color: #fff!important;
+}
+

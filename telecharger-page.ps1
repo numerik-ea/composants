@@ -8,16 +8,6 @@ if (-not ($url -match "https?://([^/]+)")) {
     exit
 }
 
-# Demander le dossier de sauvegarde
-$saveDir = Read-Host "Entrez le chemin du dossier où sauvegarder le contenu (ex: C:\Users\MonDossier)"
-
-# Vérifier si le dossier existe, sinon le créer de manière récursive
-if (-not (Test-Path $saveDir)) {
-    Write-Host "Le dossier n'existe pas. Création du dossier..." -ForegroundColor Yellow
-    New-Item -ItemType Directory -Path $saveDir -Force | Out-Null
-    Write-Host "Dossier créé avec succès." -ForegroundColor Green
-}
-
 # Créer une commande wget avec les bons paramètres
 $wgetCommand = @(
     "wget",
@@ -29,7 +19,7 @@ $wgetCommand = @(
     "--restrict-file-names=windows",
     "--level=1",
     "--no-check-certificate",
-    "--directory-prefix=`"$saveDir`"",
+    "--directory-prefix=`"pages`"",
     $url
 ) -join " "
 
