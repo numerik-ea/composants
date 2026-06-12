@@ -2,16 +2,29 @@
 $ErrorActionPreference = "Stop"
 
 Write-Host "=== Building Jekyll site ==="
-try {
-    bundle exec jekyll build
-} catch {
-    Write-Host "❌ Jekyll build failed. Make sure Ruby, Bundler, and Jekyll are installed."
+$sitePath = Join-Path (Get-Location) "_site"
+
+# Remove any stale build so a failed build can never deploy old content
+if (Test-Path $sitePath) { Remove-Item $sitePath -Recurse -Force }
+
+bundle exec jekyll build
+# try/catch cannot detect native command failures; check the exit code instead
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "❌ Jekyll build failed (exit code $LASTEXITCODE). Aborting deploy."
     exit 1
 }
 
-$sitePath = Join-Path (Get-Location) "_site"
 if (-not (Test-Path $sitePath)) {
     Write-Host "❌ _site folder not found at $sitePath"
+    exit 1
+}
+
+# pages/ is excluded from the Jekyll build (paths exceed the Windows 260-char
+# limit); robocopy supports long paths, so copy it into _site directly
+Write-Host "=== Copying pages/ (excluded from Jekyll) ==="
+robocopy "pages" (Join-Path $sitePath "pages") /E /NFL /NDL /NJH /NJS | Out-Null
+if ($LASTEXITCODE -ge 8) {
+    Write-Host "❌ robocopy failed (exit code $LASTEXITCODE). Aborting deploy."
     exit 1
 }
 
@@ -40,22 +53,26 @@ if (Test-Path $DeployPath) { Remove-Item $DeployPath -Recurse -Force }
 Write-Host "=== Adding gh-pages worktree ==="
 git worktree add $DeployPath gh-pages
 
-# 3️⃣ Clear old files in worktree
-Write-Host "=== Cleaning gh-pages worktree ==="
-Get-ChildItem $DeployPath -Force |
-    Where-Object { $_.Name -ne ".git" } |
-    Remove-Item -Recurse -Force
+# 3️⃣ Mirror _site into worktree (robocopy is long-path safe; /MIR also removes old files)
+# The worktree's .git is a FILE, not a directory: /XF keeps /MIR from deleting it
+Write-Host "=== Syncing _site into gh-pages worktree ==="
+robocopy $sitePath $DeployPath /MIR /XF .git /XD .git /NFL /NDL /NJH /NJS | Out-Null
+if ($LASTEXITCODE -ge 8) {
+    Write-Host "❌ robocopy failed (exit code $LASTEXITCODE). Aborting deploy."
+    exit 1
+}
 
-# 4️⃣ Copy _site into worktree
-Write-Host "=== Copying _site contents ==="
-Copy-Item "$sitePath\*" $DeployPath -Recurse -Force
+# Without its .git file, git commands in the worktree would target the main repo
+if (-not (Test-Path (Join-Path $DeployPath ".git"))) {
+    Write-Host "❌ Worktree .git file was lost during sync. Aborting deploy."
+    exit 1
+}
 
 # 5️⃣ Commit & push from worktree
 Set-Location $DeployPath
 git add .
-try {
-    git commit -m "Deploy static site"
-} catch {
+git commit -m "Deploy static site"
+if ($LASTEXITCODE -ne 0) {
     Write-Host "Nothing to commit (no changes)"
 }
 git push origin gh-pages

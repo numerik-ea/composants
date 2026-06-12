@@ -3,11 +3,16 @@ baseurl: "/composants/"
 
 # Build settings
 exclude:
+  # pages/ contient des copies de sites téléchargés : chemins trop longs pour
+  # Jekyll sous Windows (limite 260 caractères) ; copié tel quel par deploy.ps1
+  - pages
   - README.md
+  - deploy.ps1
   - Gemfile
   - Gemfile.lock
   - .gitignore
   - .DS_Store
   - switch_gemfile.sh
   - switch_gemfile.ps1
+  - telecharger-page.ps1
   - LICENSE
