@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrousel</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      color: #1a1a1a;
+      line-height: 1.5;
+      max-width: 50rem;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+      background: #fff;
+    }
+    h1 {
+      color: #c2185b;
+      font-size: 1.5rem;
+    }
+    h2 {
+      color: #e91e63;
+      font-style: italic;
+      font-weight: normal;
+      font-size: 1.1rem;
+      margin-top: 2rem;
+    }
+    h3 {
+      font-size: 1rem;
+      margin-top: 1.5rem;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    li {
+      margin: 0.4rem 0;
+    }
+    code {
+      font-family: Consolas, "Courier New", monospace;
+      background: #f4f4f4;
+      padding: 0.1em 0.3em;
+      border-radius: 3px;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Carrousel</h1>
+
+  <h2>Exigences</h2>
+  <ul>
+    <li>Toutes les fonctionnalités, y compris la navigation entre les éléments du slideshow, doivent pouvoir être utilisées au moyen d'un clavier.</li>
+    <li>Les modifications apportées aux éléments du slideshow doivent être communiquées à tous les utilisateurs, y compris les utilisateurs de lecteurs d'écran.</li>
+    <li>Le focus clavier est géré de manière compréhensible et doit toujours être visible.</li>
+    <li>Les éléments qui ne sont pas actuellement affichés ne doivent pas recevoir le focus clavier, même s'ils contiennent des éléments focalisables.</li>
+  </ul>
+
+  <h2>Contenu</h2>
+  <p>Le slideshow peut afficher un seul élément à la fois, deux (ou plus) à la fois, ou encore un seul élément sur mobile et plusieurs éléments sur des écrans plus grands (responsive).<br>
+  Pour anticiper ces différentes options, il est préférable de contenir chaque élément dans un <code>&lt;li&gt;</code> et tous les éléments dans un <code>&lt;ul&gt;</code>.</p>
+  <ul>
+    <li><strong>Cas 1 :</strong> Texte uniquement (pas d'élément interactif)
+      <ul>
+        <li>Lorsque les utilisateurs activent les boutons pour naviguer entre les éléments, le focus est déplacé vers le conteneur de l'élément (ajouter un attribut <code>tabindex="-1"</code> sur le conteneur de l'élément avant de déplacer le focus vers lui).</li>
+      </ul>
+    </li>
+    <li><strong>Cas 2 :</strong> Uniquement un élément interactif (soit un lien, une image de lien, un bouton, un champ de saisie…)
+      <ul>
+        <li>Lorsque les utilisateurs activent les boutons pour naviguer entre les éléments, le focus est déplacé vers l'élément interactif (lien, bouton, champ de saisie) à l'intérieur de l'élément.</li>
+      </ul>
+    </li>
+    <li><strong>Cas 3 :</strong> Un élément interactif suivi d'un autre contenu (texte, image, etc.)
+      <ul>
+        <li>Lorsque les utilisateurs activent les boutons pour naviguer entre les éléments, le focus est déplacé vers l'élément interactif (lien, bouton, champ de saisie) à l'intérieur de l'élément.</li>
+      </ul>
+    </li>
+    <li><strong>Cas 4 :</strong> un contenu (texte, image, etc.) suivi d'un élément interactif
+      <ul>
+        <li>Lorsque les utilisateurs activent les boutons pour naviguer entre les éléments, le focus est déplacé vers le conteneur de l'élément (ajouter un attribut <code>tabindex="-1"</code> sur le conteneur de l'élément avant d'y déplacer le focus).</li>
+      </ul>
+    </li>
+    <li><strong>Cas 5 :</strong> Plusieurs éléments sont visibles en même temps
+      <ul>
+        <li>Lorsque le bouton Suivant est activé, le focus est déplacé vers le premier élément nouvellement visible.</li>
+        <li>Lorsque le bouton Précédent est activé, le focus est déplacé vers le premier élément visible du slideshow (dans l'ordre du DOM).</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Ordre du code à l'intérieur du composant</h2>
+  <p>Slideshow avec boutons de navigation Précédent/Suivant</p>
+  <ul>
+    <li>Slideshow</li>
+    <li>Boutons Précédent/Suivant</li>
+  </ul>
+
+  <h3>Le slideshow ne doit pas être en lecture automatique</h3>
+  <p>Veuillez noter que nous recommandons d'éviter à tout prix d'imposer aux utilisateurs des animations non demandées. Certains utilisateurs souffrant de déficiences visuelles et/ou cognitives peuvent les trouver si dérangeantes qu'elles les amènent à quitter la page.</p>
+
+  <h2>Si le slideshow est en lecture automatique</h2>
+  <p>Les utilisateurs doivent pouvoir arrêter l'animation. Un bouton Pause/Play doit alors être le premier élément sur lequel on peut se concentrer lorsqu'on entre dans le composant avec une tabulation au clavier. Il doit également être clairement visible, présenter un rapport de contraste suffisant avec la (les) couleur(s) environnante(s) à tout moment et avoir un contour de mise au point clairement visible.</p>
+
+  <h3>Le texte du bouton (visible ou caché s'il n'y a qu'une icône) doit indiquer aux utilisateurs ce qui se passera s'ils l'activent :</h3>
+  <ul>
+    <li>"Pause" pendant que le slideshow tourne,</li>
+    <li>"Lecture" lorsque le slideshow ne tourne pas.</li>
+    <li>Lorsque les utilisateurs activent le bouton, le focus doit rester sur celui-ci et le texte doit être modifié de manière dynamique.</li>
+    <li>Lorsque l'animation du slideshow est activée et que le curseur du clavier se déplace sur l'un des éléments visibles (éventuellement lorsque le curseur de la souris survole également l'élément), l'animation du slideshow doit s'arrêter (et l'état du bouton doit être modifié en conséquence).</li>
+    <li>Lorsque le curseur quitte l'élément du slideshow, l'animation peut reprendre (et l'état du bouton est à nouveau modifié).</li>
+  </ul>
+
+  <h2>Option : boucle</h2>
+  <p>Si les utilisateurs peuvent parcourir les éléments en boucle dans les deux sens (lorsqu'ils activent le contrôle Précédent lorsqu'ils se trouvent sur le premier élément ou le contrôle Suivant lorsqu'ils se trouvent sur le dernier élément), alors.. :</p>
+
+  <h3>sur le premier élément :</h3>
+  <ul>
+    <li>les boutons <em>Précédent</em> et <em>Suivant</em> sont visibles et ne sont pas désactivés,</li>
+    <li>le bouton <em>Précédent</em> porte un nom approprié. Le bouton <em>Précédent</em> porte un nom approprié, par exemple <em>Précédent (aller au dernier élément)</em>,</li>
+    <li>lorsque les utilisateurs activent le bouton <em>Précédent</em>, le focus doit aller sur le dernier élément du slideshow,</li>
+    <li>lorsque les utilisateurs activent le bouton <em>Suivant</em>, le curseur doit être placé sur l'élément suivant du slideshow.</li>
+  </ul>
+
+  <h3>sur le dernier élément :</h3>
+  <ul>
+    <li>les boutons <em>Précédent</em> et <em>Suivant</em> sont visibles et ne sont pas désactivés,</li>
+    <li>le bouton <em>Suivant</em> porte un nom approprié. Par exemple, <em>Suivant (aller au premier élément)</em>,</li>
+    <li>lorsque les utilisateurs activent le bouton <em>Suivant</em>, le focus doit aller sur le premier élément,</li>
+    <li>lorsque les utilisateurs activent le bouton <em>Précédent</em>, l'attention doit se porter sur l'élément précédent.</li>
+  </ul>
+
+  <h2>Option : pas de boucle</h2>
+  <p>Si les utilisateurs ne peuvent pas parcourir les éléments en boucle (lorsqu'ils activent le bouton Précédent lorsqu'ils se trouvent sur le premier élément ou le bouton Suivant lorsqu'ils se trouvent sur le dernier élément), alors.. :</p>
+
+  <h3>sur le premier élément :</h3>
+  <ul>
+    <li>le bouton <em>Suivant</em> est visible et n'est pas désactivé,</li>
+    <li>lorsque les utilisateurs activent le bouton <em>Suivant</em>, le curseur doit être placé sur l'élément suivant,</li>
+    <li>le bouton <em>Précédent</em> est visuellement désactivé (avec CSS, pas d'attribut HTML <code>hidden</code>) et possède un attribut <code>aria-disabled="true"</code>,</li>
+    <li>lorsque les utilisateurs tentent d'activer le bouton <em>Précédent</em>, rien ne se passe, le focus reste sur ce bouton et l'élément affiché ne bouge pas.</li>
+  </ul>
+
+  <h3>sur le dernier élément :</h3>
+  <ul>
+    <li>le bouton <em>Précédent</em> est visible et n'est pas désactivé,</li>
+    <li>lorsque les utilisateurs activent le bouton <em>Précédent</em>, le focus doit aller à l'élément précédent,</li>
+    <li>le bouton <em>Suivant</em> est visuellement désactivé (avec CSS, pas d'attribut HTML <code>hidden</code>) et possède un attribut <code>aria-disabled="true"</code>,</li>
+    <li>lorsque les utilisateurs essaient d'activer le bouton <em>Suivant</em>, rien ne se passe, le focus reste sur le bouton et l'élément affiché ne bouge pas.</li>
+  </ul>
+
+  <h2>Boutons Suivant et Précédent</h2>
+  <p><em>&lt; et &gt; sont :</em> <strong><code>&lt;button type="button"&gt;</code></strong></p>
+  <ul>
+    <li>sont après toutes les diapositives dans l'ordre du code source</li>
+    <li>à l'intérieur des <code>&lt;button&gt;</code> précédent et suivant</li>
+    <li>un texte caché tel que <code>&lt;span class="sr-only"&gt;précédent&lt;/span&gt;</code> ou <code>&lt;span class="sr-only"&gt;suivant&lt;/span&gt;</code></li>
+    <li>L'icône de la flèche est soit <code>&lt;svg aria-hidden="true" focusable="false"&gt;</code>, <code>&lt;img alt=""&gt;</code>, soit une image d'arrière-plan CSS.</li>
+    <li>ajouter le <code>&lt;button type="button" aria-describedby="xxx"&gt;</code> ou xxx = la valeur id de l'en-tête de niveau qui précède chaque slideshow</li>
+    <li>lorsque l'utilisateur active le bouton &lt; ou &gt;, le focus est déplacé sur la <code>&lt;div tabindex="-1"&gt;</code> suivante/précédente (= la nouvelle diapositive affichée) après la fin de la transition, le cas échéant.</li>
+  </ul>
+
+  <h2>Bouton lecture/pause</h2>
+  <p>La touche lecture/pause :</p>
+  <ul>
+    <li>Il s'agit de <code>&lt;button type="button" aria-describedby="xxx"&gt;</code> où xxx = la valeur d'identification de l'en-tête de section correspondant</li>
+    <li>contient une icône qui est soit <code>&lt;svg aria-hidden="true" focusable="false"&gt;</code>, <code>&lt;img alt=""&gt;</code>, soit une image d'arrière-plan CSS</li>
+    <li>un texte caché tel que : <code>&lt;span class="sr-only"&gt;Pause&lt;/span&gt;</code> lorsque le bouton permet de faire une pause</li>
+    <li>un texte caché tel que : <code>&lt;span class="sr-only"&gt;Play&lt;/span&gt;</code> lorsque lorsque la touche permet la lecture</li>
+    <li>Il peut s'agir du même bouton dont l'étiquette est modifiée dynamiquement.</li>
+    <li>Il s'agit après tout de diapositives dans le code source</li>
+  </ul>
+</body>
+</html>
